@@ -28,3 +28,24 @@ class PatternOccurrence:
         self.e_occurrence = e_occurrence
         self.start = start
         self.end = end
+
+    def one(self):
+        return self.s_occurrence
+
+    def surface(self):
+        surface = 0
+        for value in self.e_occurrence:
+            surface += value
+        return surface
+
+    def max(self):
+        return max(self.e_occurrence)
+
+    def min(self):
+        return min(self.e_occurrence)
+
+    def width(self):
+        return self.end - self.start + 1
+
+    def height(self):
+        return max(self.e_occurrence) - min(self.e_occurrence)
