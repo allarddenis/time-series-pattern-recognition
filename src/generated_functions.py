@@ -3,15 +3,16 @@
 # By Florine Cercle - Lisa Pasqualini - Denis Allard
 # -------------------------------------------------- 
  
-import pattern
+from pattern import Pattern
 
-# --------------- 
-# zigzag
-# --------------- 
+# --------------------------------------------------------------------------- 
+# ZIGZAG
+# --------------------------------------------------------------------------- 
 
-zigzag = pattern.Pattern('zigzag', '(<>)+(<|<>)|(><)+(>|><)', 1, 1)
+zigzag = Pattern('zigzag', '(<>)+(<|<>)|(><)+(>|><)', 1, 1)
 
 # --- zigzag features --- 
+ 
 def one_zigzag(data): 
     matches = zigzag.findPatterns(data) 
     result = []
@@ -50,7 +51,7 @@ def surface_zigzag(data):
     return result 
 
 # --- zigzag aggregators --- 
-
+ 
 def max_width_zigzag(data): 
     return max(width_zigzag(data)) 
 def max_height_zigzag(data): 
@@ -82,13 +83,14 @@ def sum_min_zigzag(data):
 def sum_surface_zigzag(data): 
     return sum(surface_zigzag(data)) 
 
-# --------------- 
-# inflexion
-# --------------- 
+# --------------------------------------------------------------------------- 
+# INFLEXION
+# --------------------------------------------------------------------------- 
 
-inflexion = pattern.Pattern('inflexion', '<(<|=)*>|>(>|=)*<', 1, 1)
+inflexion = Pattern('inflexion', '<(<|=)*>|>(>|=)*<', 1, 1)
 
 # --- inflexion features --- 
+ 
 def one_inflexion(data): 
     matches = inflexion.findPatterns(data) 
     result = []
@@ -127,7 +129,7 @@ def surface_inflexion(data):
     return result 
 
 # --- inflexion aggregators --- 
-
+ 
 def max_width_inflexion(data): 
     return max(width_inflexion(data)) 
 def max_height_inflexion(data): 
@@ -159,13 +161,14 @@ def sum_min_inflexion(data):
 def sum_surface_inflexion(data): 
     return sum(surface_inflexion(data)) 
 
-# --------------- 
-# peak
-# --------------- 
+# --------------------------------------------------------------------------- 
+# PEAK
+# --------------------------------------------------------------------------- 
 
-peak = pattern.Pattern('peak', '<(=|<)*(>|=)*>', 1, 1)
+peak = Pattern('peak', '<(=|<)*(>|=)*>', 1, 1)
 
 # --- peak features --- 
+ 
 def one_peak(data): 
     matches = peak.findPatterns(data) 
     result = []
@@ -204,7 +207,7 @@ def surface_peak(data):
     return result 
 
 # --- peak aggregators --- 
-
+ 
 def max_width_peak(data): 
     return max(width_peak(data)) 
 def max_height_peak(data): 
@@ -236,13 +239,14 @@ def sum_min_peak(data):
 def sum_surface_peak(data): 
     return sum(surface_peak(data)) 
 
-# --------------- 
-# increasing_terrace
-# --------------- 
+# --------------------------------------------------------------------------- 
+# INCREASING_TERRACE
+# --------------------------------------------------------------------------- 
 
-increasing_terrace = pattern.Pattern('increasing_terrace', '<=+<', 1, 1)
+increasing_terrace = Pattern('increasing_terrace', '<=+<', 1, 1)
 
 # --- increasing_terrace features --- 
+ 
 def one_increasing_terrace(data): 
     matches = increasing_terrace.findPatterns(data) 
     result = []
@@ -281,7 +285,7 @@ def surface_increasing_terrace(data):
     return result 
 
 # --- increasing_terrace aggregators --- 
-
+ 
 def max_width_increasing_terrace(data): 
     return max(width_increasing_terrace(data)) 
 def max_height_increasing_terrace(data): 
@@ -313,13 +317,14 @@ def sum_min_increasing_terrace(data):
 def sum_surface_increasing_terrace(data): 
     return sum(surface_increasing_terrace(data)) 
 
-# --------------- 
-# proper_plateau
-# --------------- 
+# --------------------------------------------------------------------------- 
+# PROPER_PLATEAU
+# --------------------------------------------------------------------------- 
 
-proper_plateau = pattern.Pattern('proper_plateau', '<=+>', 1, 1)
+proper_plateau = Pattern('proper_plateau', '<=+>', 1, 1)
 
 # --- proper_plateau features --- 
+ 
 def one_proper_plateau(data): 
     matches = proper_plateau.findPatterns(data) 
     result = []
@@ -358,7 +363,7 @@ def surface_proper_plateau(data):
     return result 
 
 # --- proper_plateau aggregators --- 
-
+ 
 def max_width_proper_plateau(data): 
     return max(width_proper_plateau(data)) 
 def max_height_proper_plateau(data): 
@@ -390,13 +395,14 @@ def sum_min_proper_plateau(data):
 def sum_surface_proper_plateau(data): 
     return sum(surface_proper_plateau(data)) 
 
-# --------------- 
-# steady
-# --------------- 
+# --------------------------------------------------------------------------- 
+# STEADY
+# --------------------------------------------------------------------------- 
 
-steady = pattern.Pattern('steady', '=', 0, 0)
+steady = Pattern('steady', '=', 0, 0)
 
 # --- steady features --- 
+ 
 def one_steady(data): 
     matches = steady.findPatterns(data) 
     result = []
@@ -435,7 +441,7 @@ def surface_steady(data):
     return result 
 
 # --- steady aggregators --- 
-
+ 
 def max_width_steady(data): 
     return max(width_steady(data)) 
 def max_height_steady(data): 
@@ -467,13 +473,14 @@ def sum_min_steady(data):
 def sum_surface_steady(data): 
     return sum(surface_steady(data)) 
 
-# --------------- 
-# increasing_sequence
-# --------------- 
+# --------------------------------------------------------------------------- 
+# INCREASING_SEQUENCE
+# --------------------------------------------------------------------------- 
 
-increasing_sequence = pattern.Pattern('increasing_sequence', '<(<|=)*<|<', 0, 0)
+increasing_sequence = Pattern('increasing_sequence', '<(<|=)*<|<', 0, 0)
 
 # --- increasing_sequence features --- 
+ 
 def one_increasing_sequence(data): 
     matches = increasing_sequence.findPatterns(data) 
     result = []
@@ -512,7 +519,7 @@ def surface_increasing_sequence(data):
     return result 
 
 # --- increasing_sequence aggregators --- 
-
+ 
 def max_width_increasing_sequence(data): 
     return max(width_increasing_sequence(data)) 
 def max_height_increasing_sequence(data): 
@@ -544,13 +551,14 @@ def sum_min_increasing_sequence(data):
 def sum_surface_increasing_sequence(data): 
     return sum(surface_increasing_sequence(data)) 
 
-# --------------- 
-# summit
-# --------------- 
+# --------------------------------------------------------------------------- 
+# SUMMIT
+# --------------------------------------------------------------------------- 
 
-summit = pattern.Pattern('summit', '(<|(<(=|<)*<))(>|(>(=|>)*>))', 1, 1)
+summit = Pattern('summit', '(<|(<(=|<)*<))(>|(>(=|>)*>))', 1, 1)
 
 # --- summit features --- 
+ 
 def one_summit(data): 
     matches = summit.findPatterns(data) 
     result = []
@@ -589,7 +597,7 @@ def surface_summit(data):
     return result 
 
 # --- summit aggregators --- 
-
+ 
 def max_width_summit(data): 
     return max(width_summit(data)) 
 def max_height_summit(data): 
@@ -621,13 +629,14 @@ def sum_min_summit(data):
 def sum_surface_summit(data): 
     return sum(surface_summit(data)) 
 
-# --------------- 
-# plateau
-# --------------- 
+# --------------------------------------------------------------------------- 
+# PLATEAU
+# --------------------------------------------------------------------------- 
 
-plateau = pattern.Pattern('plateau', '<=*>', 1, 1)
+plateau = Pattern('plateau', '<=*>', 1, 1)
 
 # --- plateau features --- 
+ 
 def one_plateau(data): 
     matches = plateau.findPatterns(data) 
     result = []
@@ -666,7 +675,7 @@ def surface_plateau(data):
     return result 
 
 # --- plateau aggregators --- 
-
+ 
 def max_width_plateau(data): 
     return max(width_plateau(data)) 
 def max_height_plateau(data): 
@@ -698,13 +707,14 @@ def sum_min_plateau(data):
 def sum_surface_plateau(data): 
     return sum(surface_plateau(data)) 
 
-# --------------- 
-# strictly_increasing_sequence
-# --------------- 
+# --------------------------------------------------------------------------- 
+# STRICTLY_INCREASING_SEQUENCE
+# --------------------------------------------------------------------------- 
 
-strictly_increasing_sequence= pattern.Pattern('strictly_increasing_sequence', '<+', 0, 0)
+strictly_increasing_sequence = Pattern('strictly_increasing_sequence', '<+', 0, 0)
 
 # --- strictly_increasing_sequence features --- 
+ 
 def one_strictly_increasing_sequence(data): 
     matches = strictly_increasing_sequence.findPatterns(data) 
     result = []
@@ -743,7 +753,7 @@ def surface_strictly_increasing_sequence(data):
     return result 
 
 # --- strictly_increasing_sequence aggregators --- 
-
+ 
 def max_width_strictly_increasing_sequence(data): 
     return max(width_strictly_increasing_sequence(data)) 
 def max_height_strictly_increasing_sequence(data): 
@@ -775,13 +785,14 @@ def sum_min_strictly_increasing_sequence(data):
 def sum_surface_strictly_increasing_sequence(data): 
     return sum(surface_strictly_increasing_sequence(data)) 
 
-# --------------- 
-# steady_sequence
-# --------------- 
+# --------------------------------------------------------------------------- 
+# STEADY_SEQUENCE
+# --------------------------------------------------------------------------- 
 
-steady_sequence = pattern.Pattern('steady_sequence', '=+', 0, 0)
+steady_sequence = Pattern('steady_sequence', '=+', 0, 0)
 
 # --- steady_sequence features --- 
+ 
 def one_steady_sequence(data): 
     matches = steady_sequence.findPatterns(data) 
     result = []
@@ -820,7 +831,7 @@ def surface_steady_sequence(data):
     return result 
 
 # --- steady_sequence aggregators --- 
-
+ 
 def max_width_steady_sequence(data): 
     return max(width_steady_sequence(data)) 
 def max_height_steady_sequence(data): 
@@ -852,13 +863,14 @@ def sum_min_steady_sequence(data):
 def sum_surface_steady_sequence(data): 
     return sum(surface_steady_sequence(data)) 
 
-# --------------- 
-# increasing
-# --------------- 
+# --------------------------------------------------------------------------- 
+# INCREASING
+# --------------------------------------------------------------------------- 
 
-increasing = pattern.Pattern('increasing', '<', 0, 0)
+increasing = Pattern('increasing', '<', 0, 0)
 
 # --- increasing features --- 
+ 
 def one_increasing(data): 
     matches = increasing.findPatterns(data) 
     result = []
@@ -897,7 +909,7 @@ def surface_increasing(data):
     return result 
 
 # --- increasing aggregators --- 
-
+ 
 def max_width_increasing(data): 
     return max(width_increasing(data)) 
 def max_height_increasing(data): 
@@ -928,4 +940,3 @@ def sum_min_increasing(data):
     return sum(min_increasing(data)) 
 def sum_surface_increasing(data): 
     return sum(surface_increasing(data)) 
-

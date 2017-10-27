@@ -1,38 +1,15 @@
 import code_generator_backend
 from datetime import datetime
 
-c = code_generator_backend.code_generator_backend()
-
-c.begin(tab="    ")
-
-c.write('# -------------------------------------------------- \n')
-c.write('# This file was auto-generated on ' + datetime.now().strftime('%Y-%m-%d') + '\n')
-c.write('# By Florine Cercle - Lisa Pasqualini - Denis Allard')
-c.write('\n# -------------------------------------------------- \n \n')
-
 imports = [
     "pattern"
 ]
-
-for imp in imports:
-    c.write("import " + imp + "\n")
-
-c.write("\n")
 
 aggregators = [
     'max',
     'min',
     'sum'
 ]
-
-def write_aggregators(key):
-    for aggregator in aggregators:
-        for feature in features:
-            if feature != 'one':
-                c.write('def ' + aggregator + '_' + feature + '_' + key + '(data): \n')
-                c.indent()
-                c.write('return ' + aggregator + '(' + feature + '_' + key + '(data)) \n')
-                c.dedent()
 
 features = [
     'one',
@@ -43,7 +20,80 @@ features = [
     'surface'
 ]
 
+patterns = {
+    'increasing' : { 
+        'regex' : '<', 
+        'a' : 0, 
+        'b' : 0
+    },
+    'increasing_sequence' : {
+        'regex' : '<(<|=)*<|<',
+        'a' : 0,
+        'b' : 0
+    },
+    'increasing_terrace' : {
+        'regex' : '<=+<',
+        'a' : 1,
+        'b' : 1
+    },
+    'summit' : {
+        'regex' : '(<|(<(=|<)*<))(>|(>(=|>)*>))',
+        'a' : 1,
+        'b' : 1
+    },
+    'plateau' : {
+        'regex' : '<=*>',
+        'a' : 1,
+        'b' : 1
+    },
+    'proper_plateau' : {
+        'regex' : '<=+>',
+        'a' : 1,
+        'b' : 1
+    },
+    'strictly_increasing_sequence' : {
+        'regex' : '<+',
+        'a' : 0,
+        'b' : 0
+    },
+    'peak' : {
+        'regex' : '<(=|<)*(>|=)*>',
+        'a' : 1,
+        'b' : 1
+    },
+    'inflexion' : {
+        'regex' : '<(<|=)*>|>(>|=)*<',
+        'a' : 1,
+        'b': 1
+    },
+    'steady' : {
+        'regex' : '=',
+        'a' : 0,
+        'b' : 0
+    },
+    'steady_sequence' : {
+        'regex' : '=+',
+        'a' : 0,
+        'b' : 0
+    },
+    'zigzag' : {
+        'regex' : '(<>)+(<|<>)|(><)+(>|><)',
+        'a' : 1,
+        'b' : 1
+    }
+}
+
+# -----------------
+# Helping functions
+
+def write_pattern_name(key):
+    c.write('\n# --------------------------------------------------------------------------- \n')
+    c.write('# ' + key.upper() + '\n')
+    c.write('# --------------------------------------------------------------------------- \n')
+    c.write("\n")
+
 def write_features(key):
+    c.write('\n# --- ' + key + ' features --- \n \n')
     for feature in features:
         c.write('def ' + feature + '_' + key + '(data): \n')
         c.indent()
@@ -56,35 +106,41 @@ def write_features(key):
         c.write('return result \n')
         c.dedent()
 
-patterns = {
-    'increasing' : "increasing = pattern.Pattern('increasing', '<', 0, 0)",
-    'increasing_sequence' : "increasing_sequence = pattern.Pattern('increasing_sequence', '<(<|=)*<|<', 0, 0)",
-    'increasing_terrace' : "increasing_terrace = pattern.Pattern('increasing_terrace', '<=+<', 1, 1)",
-    'summit' : "summit = pattern.Pattern('summit', '(<|(<(=|<)*<))(>|(>(=|>)*>))', 1, 1)",
-    'plateau' : "plateau = pattern.Pattern('plateau', '<=*>', 1, 1)",
-    'proper_plateau' : "proper_plateau = pattern.Pattern('proper_plateau', '<=+>', 1, 1)",
-    'strictly_increasing_sequence' : "strictly_increasing_sequence= pattern.Pattern('strictly_increasing_sequence', '<+', 0, 0)",
-    'peak' : "peak = pattern.Pattern('peak', '<(=|<)*(>|=)*>', 1, 1)",
-    'inflexion' : "inflexion = pattern.Pattern('inflexion', '<(<|=)*>|>(>|=)*<', 1, 1)",
-    'steady' : "steady = pattern.Pattern('steady', '=', 0, 0)",
-    'steady_sequence' : "steady_sequence = pattern.Pattern('steady_sequence', '=+', 0, 0)",
-    'zigzag' : "zigzag = pattern.Pattern('zigzag', '(<>)+(<|<>)|(><)+(>|><)', 1, 1)"
-}
+def write_aggregators(key):
+    c.write('\n# --- ' + key + ' aggregators --- \n \n')
+    for aggregator in aggregators:
+        for feature in features:
+            if feature != 'one':
+                c.write('def ' + aggregator + '_' + feature + '_' + key + '(data): \n')
+                c.indent()
+                c.write('return ' + aggregator + '(' + feature + '_' + key + '(data)) \n')
+                c.dedent()
+
+# ---------------
+# Code generation
+
+c = code_generator_backend.code_generator_backend()
+
+c.begin(tab="    ")
+
+c.write('# -------------------------------------------------- \n')
+c.write('# This file was auto-generated on ' + datetime.now().strftime('%Y-%m-%d') + '\n')
+c.write('# By Florine Cercle - Lisa Pasqualini - Denis Allard')
+c.write('\n# -------------------------------------------------- \n \n')
+
+c.write('from pattern import Pattern')
+
+c.write("\n")
 
 for key, value in patterns.items():
-    c.write('# --------------- \n')
-    c.write('# ' + key + '\n')
-    c.write('# --------------- \n')
-    c.write("\n")
-    c.write(value + "\n")
-    c.write("\n")
-    c.write('# --- ' + key + ' features --- \n')
+    # write pattern name
+    write_pattern_name(key)
+    # create pattern instance
+    c.write(key + " = Pattern('" + key + "', '" + value['regex'] + "', " + str(value['a']) + ", " + str(value['b']) + ")\n")
+    # write features functions
     write_features(key)
-    c.write("\n")
-    c.write('# --- ' + key + ' aggregators --- \n')
-    c.write("\n")
+    # write aggregators
     write_aggregators(key)
-    c.write("\n")
 
 my_file = open("generated_functions.py", "w")
 my_file.write(c.end())
