@@ -1,4 +1,10 @@
-from signature import signatureAsString 
+import re
+
+def peakRegex(signature):
+    # <(=|<)*(>|=)*>
+    peakPattern = '<(=|<)*(>|=)*>'
+    result = re.finditer(peakPattern, signature)
+    return result
 
 def peakOccurences(signature):
     Out = True
@@ -43,11 +49,3 @@ def peakOccurences(signature):
     if In:
         occurences.append(occurence)
     return occurences
-
-rawData = [4,4,2,2,3,5,5,6,3,1,1,2,2,2,2,2,2,1]
-
-signature = signatureAsString(rawData)
-
-print signature
-
-print peakOccurences(signature)
