@@ -1,5 +1,4 @@
 import generated_functions
-import pattern
 
 raw_data = [4,4,2,2,3,5,5,6,3,1,1,2,2,2,2,2,2,1]
 

@@ -1,10 +1,6 @@
 import code_generator_backend
 from datetime import datetime
 
-imports = [
-    "pattern"
-]
-
 aggregators = [
     'max',
     'min',
