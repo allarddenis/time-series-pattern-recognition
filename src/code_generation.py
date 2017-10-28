@@ -146,7 +146,7 @@ def write_aggregators(key):
     c.write('\n# --- ' + key + ' aggregators --- \n \n')
     for aggregator in aggregators:
         for feature in features:
-            if feature != 'one':
+            if not (feature == 'one' and (aggregator == 'max' or aggregator == 'min')):
                 c.write('def ' + aggregator + '_' + feature + '_' + key + '(data): \n')
                 c.indent()
                 c.write('return ' + aggregator + '(' + feature + '_' + key + '(data)) \n')
