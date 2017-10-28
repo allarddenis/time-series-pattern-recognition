@@ -30,6 +30,8 @@ class PatternOccurrence:
         self.end = end
 
     def one(self):
+        #TO CHANGE
+        #return 1
         return self.s_occurrence
 
     def surface(self):
@@ -47,5 +49,5 @@ class PatternOccurrence:
     def width(self):
         return self.end - self.start + 1
 
-    def height(self):
+    def range(self):
         return max(self.e_occurrence) - min(self.e_occurrence)

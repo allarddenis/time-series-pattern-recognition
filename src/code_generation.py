@@ -23,9 +23,9 @@ patterns = {
         'b' : 0
     },
     'decreasing' : { 
-    'regex' : '>', 
-    'a' : 0, 
-    'b' : 0
+        'regex' : '>', 
+        'a' : 0, 
+        'b' : 0
     },
     'increasing_sequence' : {
         'regex' : '<(<|=)*<|<',
@@ -33,9 +33,9 @@ patterns = {
         'b' : 0
     },
     'decreasing_sequence' : {
-    'regex' : '>(>|=)*>|>',
-    'a' : 0,
-    'b' : 0
+        'regex' : '>(>|=)*>|>',
+        'a' : 0,
+        'b' : 0
     },
     'increasing_terrace' : {
         'regex' : '<=+<',
@@ -43,9 +43,9 @@ patterns = {
         'b' : 1
     },
     'decreasing_terrace' : {
-    'regex' : '>=+>',
-    'a' : 1,
-    'b' : 1
+        'regex' : '>=+>',
+        'a' : 1,
+        'b' : 1
     },
     'summit' : {
         'regex' : '(<|(<(=|<)*<))(>|(>(=|>)*>))',
@@ -53,9 +53,9 @@ patterns = {
         'b' : 1
     },
     'gorge' : {
-    'regex' : '(>|(>(=|>)*>))(<|(<(=|<)*<))',
-    'a' : 1,
-    'b' : 1
+        'regex' : '(>|(>(=|>)*>))(<|(<(=|<)*<))',
+        'a' : 1,
+        'b' : 1
     },
     'plateau' : {
         'regex' : '<=*>',
@@ -63,9 +63,9 @@ patterns = {
         'b' : 1
     },
     'plain' : {
-    'regex' : '>=*<',
-    'a' : 1,
-    'b' : 1
+        'regex' : '>=*<',
+        'a' : 1,
+        'b' : 1
     },
     'proper_plateau' : {
         'regex' : '<=+>',
@@ -73,9 +73,9 @@ patterns = {
         'b' : 1
     },
     'proper_plain' : {
-    'regex' : '>=+<',
-    'a' : 1,
-    'b' : 1
+        'regex' : '>=+<',
+        'a' : 1,
+        'b' : 1
     },
     'strictly_increasing_sequence' : {
         'regex' : '<+',
@@ -83,9 +83,9 @@ patterns = {
         'b' : 0
     },
     'strictly_decreasing_sequence' : {
-    'regex' : '>+',
-    'a' : 0,
-    'b' : 0
+        'regex' : '>+',
+        'a' : 0,
+        'b' : 0
     },
     'peak' : {
         'regex' : '<(=|<)*(>|=)*>',
@@ -93,9 +93,9 @@ patterns = {
         'b' : 1
     },
     'valley' : {
-    'regex' : '>(=|>)*(<|=)*<',
-    'a' : 1,
-    'b' : 1
+        'regex' : '>(=|>)*(<|=)*<',
+        'a' : 1,
+        'b' : 1
     },
     'inflexion' : {
         'regex' : '<(<|=)*>|>(>|=)*<',
