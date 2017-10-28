@@ -25,11 +25,11 @@ def width_proper_plateau(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_proper_plateau(data): 
+def range_proper_plateau(data): 
     matches = proper_plateau.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_proper_plateau(data): 
     matches = proper_plateau.findPatterns(data) 
@@ -54,8 +54,8 @@ def surface_proper_plateau(data):
  
 def max_width_proper_plateau(data): 
     return max(width_proper_plateau(data)) 
-def max_height_proper_plateau(data): 
-    return max(height_proper_plateau(data)) 
+def max_range_proper_plateau(data): 
+    return max(range_proper_plateau(data)) 
 def max_max_proper_plateau(data): 
     return max(max_proper_plateau(data)) 
 def max_min_proper_plateau(data): 
@@ -64,8 +64,8 @@ def max_surface_proper_plateau(data):
     return max(surface_proper_plateau(data)) 
 def min_width_proper_plateau(data): 
     return min(width_proper_plateau(data)) 
-def min_height_proper_plateau(data): 
-    return min(height_proper_plateau(data)) 
+def min_range_proper_plateau(data): 
+    return min(range_proper_plateau(data)) 
 def min_max_proper_plateau(data): 
     return min(max_proper_plateau(data)) 
 def min_min_proper_plateau(data): 
@@ -76,8 +76,8 @@ def sum_one_proper_plateau(data):
     return sum(one_proper_plateau(data)) 
 def sum_width_proper_plateau(data): 
     return sum(width_proper_plateau(data)) 
-def sum_height_proper_plateau(data): 
-    return sum(height_proper_plateau(data)) 
+def sum_range_proper_plateau(data): 
+    return sum(range_proper_plateau(data)) 
 def sum_max_proper_plateau(data): 
     return sum(max_proper_plateau(data)) 
 def sum_min_proper_plateau(data): 
@@ -105,11 +105,11 @@ def width_zigzag(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_zigzag(data): 
+def range_zigzag(data): 
     matches = zigzag.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_zigzag(data): 
     matches = zigzag.findPatterns(data) 
@@ -134,8 +134,8 @@ def surface_zigzag(data):
  
 def max_width_zigzag(data): 
     return max(width_zigzag(data)) 
-def max_height_zigzag(data): 
-    return max(height_zigzag(data)) 
+def max_range_zigzag(data): 
+    return max(range_zigzag(data)) 
 def max_max_zigzag(data): 
     return max(max_zigzag(data)) 
 def max_min_zigzag(data): 
@@ -144,8 +144,8 @@ def max_surface_zigzag(data):
     return max(surface_zigzag(data)) 
 def min_width_zigzag(data): 
     return min(width_zigzag(data)) 
-def min_height_zigzag(data): 
-    return min(height_zigzag(data)) 
+def min_range_zigzag(data): 
+    return min(range_zigzag(data)) 
 def min_max_zigzag(data): 
     return min(max_zigzag(data)) 
 def min_min_zigzag(data): 
@@ -156,8 +156,8 @@ def sum_one_zigzag(data):
     return sum(one_zigzag(data)) 
 def sum_width_zigzag(data): 
     return sum(width_zigzag(data)) 
-def sum_height_zigzag(data): 
-    return sum(height_zigzag(data)) 
+def sum_range_zigzag(data): 
+    return sum(range_zigzag(data)) 
 def sum_max_zigzag(data): 
     return sum(max_zigzag(data)) 
 def sum_min_zigzag(data): 
@@ -185,11 +185,11 @@ def width_plain(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_plain(data): 
+def range_plain(data): 
     matches = plain.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_plain(data): 
     matches = plain.findPatterns(data) 
@@ -214,8 +214,8 @@ def surface_plain(data):
  
 def max_width_plain(data): 
     return max(width_plain(data)) 
-def max_height_plain(data): 
-    return max(height_plain(data)) 
+def max_range_plain(data): 
+    return max(range_plain(data)) 
 def max_max_plain(data): 
     return max(max_plain(data)) 
 def max_min_plain(data): 
@@ -224,8 +224,8 @@ def max_surface_plain(data):
     return max(surface_plain(data)) 
 def min_width_plain(data): 
     return min(width_plain(data)) 
-def min_height_plain(data): 
-    return min(height_plain(data)) 
+def min_range_plain(data): 
+    return min(range_plain(data)) 
 def min_max_plain(data): 
     return min(max_plain(data)) 
 def min_min_plain(data): 
@@ -236,8 +236,8 @@ def sum_one_plain(data):
     return sum(one_plain(data)) 
 def sum_width_plain(data): 
     return sum(width_plain(data)) 
-def sum_height_plain(data): 
-    return sum(height_plain(data)) 
+def sum_range_plain(data): 
+    return sum(range_plain(data)) 
 def sum_max_plain(data): 
     return sum(max_plain(data)) 
 def sum_min_plain(data): 
@@ -265,11 +265,11 @@ def width_steady(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_steady(data): 
+def range_steady(data): 
     matches = steady.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_steady(data): 
     matches = steady.findPatterns(data) 
@@ -294,8 +294,8 @@ def surface_steady(data):
  
 def max_width_steady(data): 
     return max(width_steady(data)) 
-def max_height_steady(data): 
-    return max(height_steady(data)) 
+def max_range_steady(data): 
+    return max(range_steady(data)) 
 def max_max_steady(data): 
     return max(max_steady(data)) 
 def max_min_steady(data): 
@@ -304,8 +304,8 @@ def max_surface_steady(data):
     return max(surface_steady(data)) 
 def min_width_steady(data): 
     return min(width_steady(data)) 
-def min_height_steady(data): 
-    return min(height_steady(data)) 
+def min_range_steady(data): 
+    return min(range_steady(data)) 
 def min_max_steady(data): 
     return min(max_steady(data)) 
 def min_min_steady(data): 
@@ -316,8 +316,8 @@ def sum_one_steady(data):
     return sum(one_steady(data)) 
 def sum_width_steady(data): 
     return sum(width_steady(data)) 
-def sum_height_steady(data): 
-    return sum(height_steady(data)) 
+def sum_range_steady(data): 
+    return sum(range_steady(data)) 
 def sum_max_steady(data): 
     return sum(max_steady(data)) 
 def sum_min_steady(data): 
@@ -345,11 +345,11 @@ def width_valley(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_valley(data): 
+def range_valley(data): 
     matches = valley.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_valley(data): 
     matches = valley.findPatterns(data) 
@@ -374,8 +374,8 @@ def surface_valley(data):
  
 def max_width_valley(data): 
     return max(width_valley(data)) 
-def max_height_valley(data): 
-    return max(height_valley(data)) 
+def max_range_valley(data): 
+    return max(range_valley(data)) 
 def max_max_valley(data): 
     return max(max_valley(data)) 
 def max_min_valley(data): 
@@ -384,8 +384,8 @@ def max_surface_valley(data):
     return max(surface_valley(data)) 
 def min_width_valley(data): 
     return min(width_valley(data)) 
-def min_height_valley(data): 
-    return min(height_valley(data)) 
+def min_range_valley(data): 
+    return min(range_valley(data)) 
 def min_max_valley(data): 
     return min(max_valley(data)) 
 def min_min_valley(data): 
@@ -396,8 +396,8 @@ def sum_one_valley(data):
     return sum(one_valley(data)) 
 def sum_width_valley(data): 
     return sum(width_valley(data)) 
-def sum_height_valley(data): 
-    return sum(height_valley(data)) 
+def sum_range_valley(data): 
+    return sum(range_valley(data)) 
 def sum_max_valley(data): 
     return sum(max_valley(data)) 
 def sum_min_valley(data): 
@@ -425,11 +425,11 @@ def width_inflexion(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_inflexion(data): 
+def range_inflexion(data): 
     matches = inflexion.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_inflexion(data): 
     matches = inflexion.findPatterns(data) 
@@ -454,8 +454,8 @@ def surface_inflexion(data):
  
 def max_width_inflexion(data): 
     return max(width_inflexion(data)) 
-def max_height_inflexion(data): 
-    return max(height_inflexion(data)) 
+def max_range_inflexion(data): 
+    return max(range_inflexion(data)) 
 def max_max_inflexion(data): 
     return max(max_inflexion(data)) 
 def max_min_inflexion(data): 
@@ -464,8 +464,8 @@ def max_surface_inflexion(data):
     return max(surface_inflexion(data)) 
 def min_width_inflexion(data): 
     return min(width_inflexion(data)) 
-def min_height_inflexion(data): 
-    return min(height_inflexion(data)) 
+def min_range_inflexion(data): 
+    return min(range_inflexion(data)) 
 def min_max_inflexion(data): 
     return min(max_inflexion(data)) 
 def min_min_inflexion(data): 
@@ -476,8 +476,8 @@ def sum_one_inflexion(data):
     return sum(one_inflexion(data)) 
 def sum_width_inflexion(data): 
     return sum(width_inflexion(data)) 
-def sum_height_inflexion(data): 
-    return sum(height_inflexion(data)) 
+def sum_range_inflexion(data): 
+    return sum(range_inflexion(data)) 
 def sum_max_inflexion(data): 
     return sum(max_inflexion(data)) 
 def sum_min_inflexion(data): 
@@ -505,11 +505,11 @@ def width_increasing_sequence(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_increasing_sequence(data): 
+def range_increasing_sequence(data): 
     matches = increasing_sequence.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_increasing_sequence(data): 
     matches = increasing_sequence.findPatterns(data) 
@@ -534,8 +534,8 @@ def surface_increasing_sequence(data):
  
 def max_width_increasing_sequence(data): 
     return max(width_increasing_sequence(data)) 
-def max_height_increasing_sequence(data): 
-    return max(height_increasing_sequence(data)) 
+def max_range_increasing_sequence(data): 
+    return max(range_increasing_sequence(data)) 
 def max_max_increasing_sequence(data): 
     return max(max_increasing_sequence(data)) 
 def max_min_increasing_sequence(data): 
@@ -544,8 +544,8 @@ def max_surface_increasing_sequence(data):
     return max(surface_increasing_sequence(data)) 
 def min_width_increasing_sequence(data): 
     return min(width_increasing_sequence(data)) 
-def min_height_increasing_sequence(data): 
-    return min(height_increasing_sequence(data)) 
+def min_range_increasing_sequence(data): 
+    return min(range_increasing_sequence(data)) 
 def min_max_increasing_sequence(data): 
     return min(max_increasing_sequence(data)) 
 def min_min_increasing_sequence(data): 
@@ -556,8 +556,8 @@ def sum_one_increasing_sequence(data):
     return sum(one_increasing_sequence(data)) 
 def sum_width_increasing_sequence(data): 
     return sum(width_increasing_sequence(data)) 
-def sum_height_increasing_sequence(data): 
-    return sum(height_increasing_sequence(data)) 
+def sum_range_increasing_sequence(data): 
+    return sum(range_increasing_sequence(data)) 
 def sum_max_increasing_sequence(data): 
     return sum(max_increasing_sequence(data)) 
 def sum_min_increasing_sequence(data): 
@@ -585,11 +585,11 @@ def width_strictly_increasing_sequence(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_strictly_increasing_sequence(data): 
+def range_strictly_increasing_sequence(data): 
     matches = strictly_increasing_sequence.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_strictly_increasing_sequence(data): 
     matches = strictly_increasing_sequence.findPatterns(data) 
@@ -614,8 +614,8 @@ def surface_strictly_increasing_sequence(data):
  
 def max_width_strictly_increasing_sequence(data): 
     return max(width_strictly_increasing_sequence(data)) 
-def max_height_strictly_increasing_sequence(data): 
-    return max(height_strictly_increasing_sequence(data)) 
+def max_range_strictly_increasing_sequence(data): 
+    return max(range_strictly_increasing_sequence(data)) 
 def max_max_strictly_increasing_sequence(data): 
     return max(max_strictly_increasing_sequence(data)) 
 def max_min_strictly_increasing_sequence(data): 
@@ -624,8 +624,8 @@ def max_surface_strictly_increasing_sequence(data):
     return max(surface_strictly_increasing_sequence(data)) 
 def min_width_strictly_increasing_sequence(data): 
     return min(width_strictly_increasing_sequence(data)) 
-def min_height_strictly_increasing_sequence(data): 
-    return min(height_strictly_increasing_sequence(data)) 
+def min_range_strictly_increasing_sequence(data): 
+    return min(range_strictly_increasing_sequence(data)) 
 def min_max_strictly_increasing_sequence(data): 
     return min(max_strictly_increasing_sequence(data)) 
 def min_min_strictly_increasing_sequence(data): 
@@ -636,8 +636,8 @@ def sum_one_strictly_increasing_sequence(data):
     return sum(one_strictly_increasing_sequence(data)) 
 def sum_width_strictly_increasing_sequence(data): 
     return sum(width_strictly_increasing_sequence(data)) 
-def sum_height_strictly_increasing_sequence(data): 
-    return sum(height_strictly_increasing_sequence(data)) 
+def sum_range_strictly_increasing_sequence(data): 
+    return sum(range_strictly_increasing_sequence(data)) 
 def sum_max_strictly_increasing_sequence(data): 
     return sum(max_strictly_increasing_sequence(data)) 
 def sum_min_strictly_increasing_sequence(data): 
@@ -665,11 +665,11 @@ def width_steady_sequence(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_steady_sequence(data): 
+def range_steady_sequence(data): 
     matches = steady_sequence.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_steady_sequence(data): 
     matches = steady_sequence.findPatterns(data) 
@@ -694,8 +694,8 @@ def surface_steady_sequence(data):
  
 def max_width_steady_sequence(data): 
     return max(width_steady_sequence(data)) 
-def max_height_steady_sequence(data): 
-    return max(height_steady_sequence(data)) 
+def max_range_steady_sequence(data): 
+    return max(range_steady_sequence(data)) 
 def max_max_steady_sequence(data): 
     return max(max_steady_sequence(data)) 
 def max_min_steady_sequence(data): 
@@ -704,8 +704,8 @@ def max_surface_steady_sequence(data):
     return max(surface_steady_sequence(data)) 
 def min_width_steady_sequence(data): 
     return min(width_steady_sequence(data)) 
-def min_height_steady_sequence(data): 
-    return min(height_steady_sequence(data)) 
+def min_range_steady_sequence(data): 
+    return min(range_steady_sequence(data)) 
 def min_max_steady_sequence(data): 
     return min(max_steady_sequence(data)) 
 def min_min_steady_sequence(data): 
@@ -716,8 +716,8 @@ def sum_one_steady_sequence(data):
     return sum(one_steady_sequence(data)) 
 def sum_width_steady_sequence(data): 
     return sum(width_steady_sequence(data)) 
-def sum_height_steady_sequence(data): 
-    return sum(height_steady_sequence(data)) 
+def sum_range_steady_sequence(data): 
+    return sum(range_steady_sequence(data)) 
 def sum_max_steady_sequence(data): 
     return sum(max_steady_sequence(data)) 
 def sum_min_steady_sequence(data): 
@@ -745,11 +745,11 @@ def width_summit(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_summit(data): 
+def range_summit(data): 
     matches = summit.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_summit(data): 
     matches = summit.findPatterns(data) 
@@ -774,8 +774,8 @@ def surface_summit(data):
  
 def max_width_summit(data): 
     return max(width_summit(data)) 
-def max_height_summit(data): 
-    return max(height_summit(data)) 
+def max_range_summit(data): 
+    return max(range_summit(data)) 
 def max_max_summit(data): 
     return max(max_summit(data)) 
 def max_min_summit(data): 
@@ -784,8 +784,8 @@ def max_surface_summit(data):
     return max(surface_summit(data)) 
 def min_width_summit(data): 
     return min(width_summit(data)) 
-def min_height_summit(data): 
-    return min(height_summit(data)) 
+def min_range_summit(data): 
+    return min(range_summit(data)) 
 def min_max_summit(data): 
     return min(max_summit(data)) 
 def min_min_summit(data): 
@@ -796,8 +796,8 @@ def sum_one_summit(data):
     return sum(one_summit(data)) 
 def sum_width_summit(data): 
     return sum(width_summit(data)) 
-def sum_height_summit(data): 
-    return sum(height_summit(data)) 
+def sum_range_summit(data): 
+    return sum(range_summit(data)) 
 def sum_max_summit(data): 
     return sum(max_summit(data)) 
 def sum_min_summit(data): 
@@ -825,11 +825,11 @@ def width_decreasing_sequence(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_decreasing_sequence(data): 
+def range_decreasing_sequence(data): 
     matches = decreasing_sequence.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_decreasing_sequence(data): 
     matches = decreasing_sequence.findPatterns(data) 
@@ -854,8 +854,8 @@ def surface_decreasing_sequence(data):
  
 def max_width_decreasing_sequence(data): 
     return max(width_decreasing_sequence(data)) 
-def max_height_decreasing_sequence(data): 
-    return max(height_decreasing_sequence(data)) 
+def max_range_decreasing_sequence(data): 
+    return max(range_decreasing_sequence(data)) 
 def max_max_decreasing_sequence(data): 
     return max(max_decreasing_sequence(data)) 
 def max_min_decreasing_sequence(data): 
@@ -864,8 +864,8 @@ def max_surface_decreasing_sequence(data):
     return max(surface_decreasing_sequence(data)) 
 def min_width_decreasing_sequence(data): 
     return min(width_decreasing_sequence(data)) 
-def min_height_decreasing_sequence(data): 
-    return min(height_decreasing_sequence(data)) 
+def min_range_decreasing_sequence(data): 
+    return min(range_decreasing_sequence(data)) 
 def min_max_decreasing_sequence(data): 
     return min(max_decreasing_sequence(data)) 
 def min_min_decreasing_sequence(data): 
@@ -876,8 +876,8 @@ def sum_one_decreasing_sequence(data):
     return sum(one_decreasing_sequence(data)) 
 def sum_width_decreasing_sequence(data): 
     return sum(width_decreasing_sequence(data)) 
-def sum_height_decreasing_sequence(data): 
-    return sum(height_decreasing_sequence(data)) 
+def sum_range_decreasing_sequence(data): 
+    return sum(range_decreasing_sequence(data)) 
 def sum_max_decreasing_sequence(data): 
     return sum(max_decreasing_sequence(data)) 
 def sum_min_decreasing_sequence(data): 
@@ -905,11 +905,11 @@ def width_plateau(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_plateau(data): 
+def range_plateau(data): 
     matches = plateau.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_plateau(data): 
     matches = plateau.findPatterns(data) 
@@ -934,8 +934,8 @@ def surface_plateau(data):
  
 def max_width_plateau(data): 
     return max(width_plateau(data)) 
-def max_height_plateau(data): 
-    return max(height_plateau(data)) 
+def max_range_plateau(data): 
+    return max(range_plateau(data)) 
 def max_max_plateau(data): 
     return max(max_plateau(data)) 
 def max_min_plateau(data): 
@@ -944,8 +944,8 @@ def max_surface_plateau(data):
     return max(surface_plateau(data)) 
 def min_width_plateau(data): 
     return min(width_plateau(data)) 
-def min_height_plateau(data): 
-    return min(height_plateau(data)) 
+def min_range_plateau(data): 
+    return min(range_plateau(data)) 
 def min_max_plateau(data): 
     return min(max_plateau(data)) 
 def min_min_plateau(data): 
@@ -956,8 +956,8 @@ def sum_one_plateau(data):
     return sum(one_plateau(data)) 
 def sum_width_plateau(data): 
     return sum(width_plateau(data)) 
-def sum_height_plateau(data): 
-    return sum(height_plateau(data)) 
+def sum_range_plateau(data): 
+    return sum(range_plateau(data)) 
 def sum_max_plateau(data): 
     return sum(max_plateau(data)) 
 def sum_min_plateau(data): 
@@ -985,11 +985,11 @@ def width_decreasing(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_decreasing(data): 
+def range_decreasing(data): 
     matches = decreasing.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_decreasing(data): 
     matches = decreasing.findPatterns(data) 
@@ -1014,8 +1014,8 @@ def surface_decreasing(data):
  
 def max_width_decreasing(data): 
     return max(width_decreasing(data)) 
-def max_height_decreasing(data): 
-    return max(height_decreasing(data)) 
+def max_range_decreasing(data): 
+    return max(range_decreasing(data)) 
 def max_max_decreasing(data): 
     return max(max_decreasing(data)) 
 def max_min_decreasing(data): 
@@ -1024,8 +1024,8 @@ def max_surface_decreasing(data):
     return max(surface_decreasing(data)) 
 def min_width_decreasing(data): 
     return min(width_decreasing(data)) 
-def min_height_decreasing(data): 
-    return min(height_decreasing(data)) 
+def min_range_decreasing(data): 
+    return min(range_decreasing(data)) 
 def min_max_decreasing(data): 
     return min(max_decreasing(data)) 
 def min_min_decreasing(data): 
@@ -1036,8 +1036,8 @@ def sum_one_decreasing(data):
     return sum(one_decreasing(data)) 
 def sum_width_decreasing(data): 
     return sum(width_decreasing(data)) 
-def sum_height_decreasing(data): 
-    return sum(height_decreasing(data)) 
+def sum_range_decreasing(data): 
+    return sum(range_decreasing(data)) 
 def sum_max_decreasing(data): 
     return sum(max_decreasing(data)) 
 def sum_min_decreasing(data): 
@@ -1065,11 +1065,11 @@ def width_decreasing_terrace(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_decreasing_terrace(data): 
+def range_decreasing_terrace(data): 
     matches = decreasing_terrace.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_decreasing_terrace(data): 
     matches = decreasing_terrace.findPatterns(data) 
@@ -1094,8 +1094,8 @@ def surface_decreasing_terrace(data):
  
 def max_width_decreasing_terrace(data): 
     return max(width_decreasing_terrace(data)) 
-def max_height_decreasing_terrace(data): 
-    return max(height_decreasing_terrace(data)) 
+def max_range_decreasing_terrace(data): 
+    return max(range_decreasing_terrace(data)) 
 def max_max_decreasing_terrace(data): 
     return max(max_decreasing_terrace(data)) 
 def max_min_decreasing_terrace(data): 
@@ -1104,8 +1104,8 @@ def max_surface_decreasing_terrace(data):
     return max(surface_decreasing_terrace(data)) 
 def min_width_decreasing_terrace(data): 
     return min(width_decreasing_terrace(data)) 
-def min_height_decreasing_terrace(data): 
-    return min(height_decreasing_terrace(data)) 
+def min_range_decreasing_terrace(data): 
+    return min(range_decreasing_terrace(data)) 
 def min_max_decreasing_terrace(data): 
     return min(max_decreasing_terrace(data)) 
 def min_min_decreasing_terrace(data): 
@@ -1116,8 +1116,8 @@ def sum_one_decreasing_terrace(data):
     return sum(one_decreasing_terrace(data)) 
 def sum_width_decreasing_terrace(data): 
     return sum(width_decreasing_terrace(data)) 
-def sum_height_decreasing_terrace(data): 
-    return sum(height_decreasing_terrace(data)) 
+def sum_range_decreasing_terrace(data): 
+    return sum(range_decreasing_terrace(data)) 
 def sum_max_decreasing_terrace(data): 
     return sum(max_decreasing_terrace(data)) 
 def sum_min_decreasing_terrace(data): 
@@ -1145,11 +1145,11 @@ def width_gorge(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_gorge(data): 
+def range_gorge(data): 
     matches = gorge.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_gorge(data): 
     matches = gorge.findPatterns(data) 
@@ -1174,8 +1174,8 @@ def surface_gorge(data):
  
 def max_width_gorge(data): 
     return max(width_gorge(data)) 
-def max_height_gorge(data): 
-    return max(height_gorge(data)) 
+def max_range_gorge(data): 
+    return max(range_gorge(data)) 
 def max_max_gorge(data): 
     return max(max_gorge(data)) 
 def max_min_gorge(data): 
@@ -1184,8 +1184,8 @@ def max_surface_gorge(data):
     return max(surface_gorge(data)) 
 def min_width_gorge(data): 
     return min(width_gorge(data)) 
-def min_height_gorge(data): 
-    return min(height_gorge(data)) 
+def min_range_gorge(data): 
+    return min(range_gorge(data)) 
 def min_max_gorge(data): 
     return min(max_gorge(data)) 
 def min_min_gorge(data): 
@@ -1196,8 +1196,8 @@ def sum_one_gorge(data):
     return sum(one_gorge(data)) 
 def sum_width_gorge(data): 
     return sum(width_gorge(data)) 
-def sum_height_gorge(data): 
-    return sum(height_gorge(data)) 
+def sum_range_gorge(data): 
+    return sum(range_gorge(data)) 
 def sum_max_gorge(data): 
     return sum(max_gorge(data)) 
 def sum_min_gorge(data): 
@@ -1225,11 +1225,11 @@ def width_peak(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_peak(data): 
+def range_peak(data): 
     matches = peak.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_peak(data): 
     matches = peak.findPatterns(data) 
@@ -1254,8 +1254,8 @@ def surface_peak(data):
  
 def max_width_peak(data): 
     return max(width_peak(data)) 
-def max_height_peak(data): 
-    return max(height_peak(data)) 
+def max_range_peak(data): 
+    return max(range_peak(data)) 
 def max_max_peak(data): 
     return max(max_peak(data)) 
 def max_min_peak(data): 
@@ -1264,8 +1264,8 @@ def max_surface_peak(data):
     return max(surface_peak(data)) 
 def min_width_peak(data): 
     return min(width_peak(data)) 
-def min_height_peak(data): 
-    return min(height_peak(data)) 
+def min_range_peak(data): 
+    return min(range_peak(data)) 
 def min_max_peak(data): 
     return min(max_peak(data)) 
 def min_min_peak(data): 
@@ -1276,8 +1276,8 @@ def sum_one_peak(data):
     return sum(one_peak(data)) 
 def sum_width_peak(data): 
     return sum(width_peak(data)) 
-def sum_height_peak(data): 
-    return sum(height_peak(data)) 
+def sum_range_peak(data): 
+    return sum(range_peak(data)) 
 def sum_max_peak(data): 
     return sum(max_peak(data)) 
 def sum_min_peak(data): 
@@ -1305,11 +1305,11 @@ def width_increasing(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_increasing(data): 
+def range_increasing(data): 
     matches = increasing.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_increasing(data): 
     matches = increasing.findPatterns(data) 
@@ -1334,8 +1334,8 @@ def surface_increasing(data):
  
 def max_width_increasing(data): 
     return max(width_increasing(data)) 
-def max_height_increasing(data): 
-    return max(height_increasing(data)) 
+def max_range_increasing(data): 
+    return max(range_increasing(data)) 
 def max_max_increasing(data): 
     return max(max_increasing(data)) 
 def max_min_increasing(data): 
@@ -1344,8 +1344,8 @@ def max_surface_increasing(data):
     return max(surface_increasing(data)) 
 def min_width_increasing(data): 
     return min(width_increasing(data)) 
-def min_height_increasing(data): 
-    return min(height_increasing(data)) 
+def min_range_increasing(data): 
+    return min(range_increasing(data)) 
 def min_max_increasing(data): 
     return min(max_increasing(data)) 
 def min_min_increasing(data): 
@@ -1356,8 +1356,8 @@ def sum_one_increasing(data):
     return sum(one_increasing(data)) 
 def sum_width_increasing(data): 
     return sum(width_increasing(data)) 
-def sum_height_increasing(data): 
-    return sum(height_increasing(data)) 
+def sum_range_increasing(data): 
+    return sum(range_increasing(data)) 
 def sum_max_increasing(data): 
     return sum(max_increasing(data)) 
 def sum_min_increasing(data): 
@@ -1385,11 +1385,11 @@ def width_increasing_terrace(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_increasing_terrace(data): 
+def range_increasing_terrace(data): 
     matches = increasing_terrace.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_increasing_terrace(data): 
     matches = increasing_terrace.findPatterns(data) 
@@ -1414,8 +1414,8 @@ def surface_increasing_terrace(data):
  
 def max_width_increasing_terrace(data): 
     return max(width_increasing_terrace(data)) 
-def max_height_increasing_terrace(data): 
-    return max(height_increasing_terrace(data)) 
+def max_range_increasing_terrace(data): 
+    return max(range_increasing_terrace(data)) 
 def max_max_increasing_terrace(data): 
     return max(max_increasing_terrace(data)) 
 def max_min_increasing_terrace(data): 
@@ -1424,8 +1424,8 @@ def max_surface_increasing_terrace(data):
     return max(surface_increasing_terrace(data)) 
 def min_width_increasing_terrace(data): 
     return min(width_increasing_terrace(data)) 
-def min_height_increasing_terrace(data): 
-    return min(height_increasing_terrace(data)) 
+def min_range_increasing_terrace(data): 
+    return min(range_increasing_terrace(data)) 
 def min_max_increasing_terrace(data): 
     return min(max_increasing_terrace(data)) 
 def min_min_increasing_terrace(data): 
@@ -1436,8 +1436,8 @@ def sum_one_increasing_terrace(data):
     return sum(one_increasing_terrace(data)) 
 def sum_width_increasing_terrace(data): 
     return sum(width_increasing_terrace(data)) 
-def sum_height_increasing_terrace(data): 
-    return sum(height_increasing_terrace(data)) 
+def sum_range_increasing_terrace(data): 
+    return sum(range_increasing_terrace(data)) 
 def sum_max_increasing_terrace(data): 
     return sum(max_increasing_terrace(data)) 
 def sum_min_increasing_terrace(data): 
@@ -1465,11 +1465,11 @@ def width_strictly_decreasing_sequence(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_strictly_decreasing_sequence(data): 
+def range_strictly_decreasing_sequence(data): 
     matches = strictly_decreasing_sequence.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_strictly_decreasing_sequence(data): 
     matches = strictly_decreasing_sequence.findPatterns(data) 
@@ -1494,8 +1494,8 @@ def surface_strictly_decreasing_sequence(data):
  
 def max_width_strictly_decreasing_sequence(data): 
     return max(width_strictly_decreasing_sequence(data)) 
-def max_height_strictly_decreasing_sequence(data): 
-    return max(height_strictly_decreasing_sequence(data)) 
+def max_range_strictly_decreasing_sequence(data): 
+    return max(range_strictly_decreasing_sequence(data)) 
 def max_max_strictly_decreasing_sequence(data): 
     return max(max_strictly_decreasing_sequence(data)) 
 def max_min_strictly_decreasing_sequence(data): 
@@ -1504,8 +1504,8 @@ def max_surface_strictly_decreasing_sequence(data):
     return max(surface_strictly_decreasing_sequence(data)) 
 def min_width_strictly_decreasing_sequence(data): 
     return min(width_strictly_decreasing_sequence(data)) 
-def min_height_strictly_decreasing_sequence(data): 
-    return min(height_strictly_decreasing_sequence(data)) 
+def min_range_strictly_decreasing_sequence(data): 
+    return min(range_strictly_decreasing_sequence(data)) 
 def min_max_strictly_decreasing_sequence(data): 
     return min(max_strictly_decreasing_sequence(data)) 
 def min_min_strictly_decreasing_sequence(data): 
@@ -1516,8 +1516,8 @@ def sum_one_strictly_decreasing_sequence(data):
     return sum(one_strictly_decreasing_sequence(data)) 
 def sum_width_strictly_decreasing_sequence(data): 
     return sum(width_strictly_decreasing_sequence(data)) 
-def sum_height_strictly_decreasing_sequence(data): 
-    return sum(height_strictly_decreasing_sequence(data)) 
+def sum_range_strictly_decreasing_sequence(data): 
+    return sum(range_strictly_decreasing_sequence(data)) 
 def sum_max_strictly_decreasing_sequence(data): 
     return sum(max_strictly_decreasing_sequence(data)) 
 def sum_min_strictly_decreasing_sequence(data): 
@@ -1545,11 +1545,11 @@ def width_proper_plain(data):
     for match in matches:
         result.append(match.width()) 
     return result 
-def height_proper_plain(data): 
+def range_proper_plain(data): 
     matches = proper_plain.findPatterns(data) 
     result = []
     for match in matches:
-        result.append(match.height()) 
+        result.append(match.range()) 
     return result 
 def max_proper_plain(data): 
     matches = proper_plain.findPatterns(data) 
@@ -1574,8 +1574,8 @@ def surface_proper_plain(data):
  
 def max_width_proper_plain(data): 
     return max(width_proper_plain(data)) 
-def max_height_proper_plain(data): 
-    return max(height_proper_plain(data)) 
+def max_range_proper_plain(data): 
+    return max(range_proper_plain(data)) 
 def max_max_proper_plain(data): 
     return max(max_proper_plain(data)) 
 def max_min_proper_plain(data): 
@@ -1584,8 +1584,8 @@ def max_surface_proper_plain(data):
     return max(surface_proper_plain(data)) 
 def min_width_proper_plain(data): 
     return min(width_proper_plain(data)) 
-def min_height_proper_plain(data): 
-    return min(height_proper_plain(data)) 
+def min_range_proper_plain(data): 
+    return min(range_proper_plain(data)) 
 def min_max_proper_plain(data): 
     return min(max_proper_plain(data)) 
 def min_min_proper_plain(data): 
@@ -1596,8 +1596,8 @@ def sum_one_proper_plain(data):
     return sum(one_proper_plain(data)) 
 def sum_width_proper_plain(data): 
     return sum(width_proper_plain(data)) 
-def sum_height_proper_plain(data): 
-    return sum(height_proper_plain(data)) 
+def sum_range_proper_plain(data): 
+    return sum(range_proper_plain(data)) 
 def sum_max_proper_plain(data): 
     return sum(max_proper_plain(data)) 
 def sum_min_proper_plain(data): 

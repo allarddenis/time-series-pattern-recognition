@@ -10,7 +10,7 @@ aggregators = [
 features = [
     'one',
     'width',
-    'height',
+    'range',
     'max',
     'min',
     'surface'
