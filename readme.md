@@ -7,13 +7,21 @@ Generated python code analysing time series and extracting patterns from it.
 Pattern name | Regex
 ------------ | -------------
 increasing | <
+decreasing | >
 increasing_sequence | <(<\|=)*<\|<
+decreasing_sequence | >(>\|=)*>\|>
 increasing_terrace | <=+<
+decreasing_terrace | >=+>
 summit | (<\|(<(=\|<)*<))(>\|(>(=\|>)*>))
+gorge | (>\|(>(=\|>)*>))(<\|(<(=\|<)*<))
 plateau | <=*>
+plain | >=*<
 proper_plateau | <=+>
+proper_plain | >=+<
 strictly_increasing_sequence | <+
+strictly_decreasing_sequence | >+
 peak | <(=\|<)*(>\|=)*>
+valley | >(=\|>)*(<\|=)*<
 inflexion | <(<\|=)*>\|>(>\|=)*<
 steady | =
 steady_sequence | =+
