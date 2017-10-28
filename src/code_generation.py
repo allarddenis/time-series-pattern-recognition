@@ -22,40 +22,80 @@ patterns = {
         'a' : 0, 
         'b' : 0
     },
+    'decreasing' : { 
+    'regex' : '>', 
+    'a' : 0, 
+    'b' : 0
+    },
     'increasing_sequence' : {
         'regex' : '<(<|=)*<|<',
         'a' : 0,
         'b' : 0
+    },
+    'decreasing_sequence' : {
+    'regex' : '>(>|=)*>|>',
+    'a' : 0,
+    'b' : 0
     },
     'increasing_terrace' : {
         'regex' : '<=+<',
         'a' : 1,
         'b' : 1
     },
+    'decreasing_terrace' : {
+    'regex' : '>=+>',
+    'a' : 1,
+    'b' : 1
+    },
     'summit' : {
         'regex' : '(<|(<(=|<)*<))(>|(>(=|>)*>))',
         'a' : 1,
         'b' : 1
+    },
+    'gorge' : {
+    'regex' : '(>|(>(=|>)*>))(<|(<(=|<)*<))',
+    'a' : 1,
+    'b' : 1
     },
     'plateau' : {
         'regex' : '<=*>',
         'a' : 1,
         'b' : 1
     },
+    'plain' : {
+    'regex' : '>=*<',
+    'a' : 1,
+    'b' : 1
+    },
     'proper_plateau' : {
         'regex' : '<=+>',
         'a' : 1,
         'b' : 1
+    },
+    'proper_plain' : {
+    'regex' : '>=+<',
+    'a' : 1,
+    'b' : 1
     },
     'strictly_increasing_sequence' : {
         'regex' : '<+',
         'a' : 0,
         'b' : 0
     },
+    'strictly_decreasing_sequence' : {
+    'regex' : '>+',
+    'a' : 0,
+    'b' : 0
+    },
     'peak' : {
         'regex' : '<(=|<)*(>|=)*>',
         'a' : 1,
         'b' : 1
+    },
+    'valley' : {
+    'regex' : '>(=|>)*(<|=)*<',
+    'a' : 1,
+    'b' : 1
     },
     'inflexion' : {
         'regex' : '<(<|=)*>|>(>|=)*<',
