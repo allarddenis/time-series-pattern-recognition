@@ -30,11 +30,13 @@ def getPattern(given_patterns, pattern_name):
 
 raw_data = [4,4,2,2,3,5,5,6,3,1,1,2,2,2,2,2,2,1]
 
-pats = getPatterns(raw_patterns)
+pattern = getPattern(raw_patterns, 'peak')
 
-time_series = TimeSeries(raw_data, pats[0])
+time_series = TimeSeries(raw_data, pattern)
 
 time_series.analyze(raw_data)
 
+print time_series.pattern.name
 print time_series.semantic
 print time_series.states
+print time_series.footprint

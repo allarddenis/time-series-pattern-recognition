@@ -12,12 +12,13 @@ def signatureAsString(data):
 
 class TimeSeries:
 
-    def __init__(self, data, pattern, states = None, semantic = None):
+    def __init__(self, data, pattern, states = None, semantic = None, footprint = None):
         self.data = data
         self.signature = ''
         self.pattern = pattern
         self.states = states if states is not None else []
         self.semantic = semantic if semantic is not None else []
+        self.footprint = footprint if footprint is not None else []
 
     def getEntryState(self):
         return self.pattern.getEntryState()
@@ -31,12 +32,18 @@ class TimeSeries:
         current_state = self.getEntryState()
         self.states.append(current_state)
         self.semantic = []
+        self.footprint = []
+        # Initiating accumulators
+        c = 0
         # Constructing semantic and states
         for sign in self.signature:
             next_state = self.pattern.nextState(current_state, sign)
             self.states.append(next_state['output_state'])
             current_state = next_state['output_state']
             self.semantic.append(next_state['semantic'])
+            if 'found' in next_state['semantic'] :
+                c += 1
+            self.footprint.append(c)
 
 class Pattern:
 
