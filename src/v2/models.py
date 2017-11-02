@@ -12,13 +12,14 @@ def signatureAsString(data):
 
 class TimeSeries:
 
-    def __init__(self, data, pattern, states = None, semantic = None, footprint = None):
+    def __init__(self, data, pattern, states = None, semantic = None, footprint = None, counter = None):
         self.data = data
         self.signature = ''
         self.pattern = pattern
         self.states = states if states is not None else []
         self.semantic = semantic if semantic is not None else []
         self.footprint = footprint if footprint is not None else []
+        self.counter = counter if counter is not None else []
 
     def getEntryState(self):
         return self.pattern.getEntryState()
@@ -33,9 +34,11 @@ class TimeSeries:
         self.states.append(current_state)
         self.semantic = []
         self.footprint = []
+        self.counter = []
         # Initiating accumulators
         c = 0
         # Constructing semantic and states
+        index = 0
         for sign in self.signature:
             next_state = self.pattern.nextState(current_state, sign)
             self.states.append(next_state['output_state'])
@@ -43,7 +46,26 @@ class TimeSeries:
             self.semantic.append(next_state['semantic'])
             if 'found' in next_state['semantic'] :
                 c += 1
-            self.footprint.append(c)
+            self.counter.append(c)
+            index += 1
+        print c
+        f = False
+        for sign in self.semantic[::-1]:
+            if 'found' in sign or 'in' in sign:
+                f = True
+                self.footprint.append(c)
+            elif 'maybe' in sign and f:
+                self.footprint.append(c)
+            elif 'out' in sign:
+                if f:
+                    f = False
+                    c -= 1
+                    self.footprint.append(0)
+                else:
+                    self.footprint.append(0)
+            else:
+                self.footprint.append(0)
+        self.footprint.reverse()
 
 class Pattern:
 
