@@ -32,7 +32,9 @@ raw_data = [4,4,2,2,3,5,5,6,3,1,1,2,2,2,2,2,2,1]
 
 pattern = getPattern(raw_patterns, 'peak')
 
-time_series = TimeSeries(raw_data, pattern)
+time_series = TimeSeries(pattern)
+
+time_series.setData(raw_data)
 
 time_series.analyze(raw_data)
 

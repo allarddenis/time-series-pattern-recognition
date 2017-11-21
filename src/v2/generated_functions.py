@@ -1,4 +1,39 @@
-def signatureAsString(data):
+# --------------------------------------------------
+# This file was auto-generated on 2017-11-21
+# By Florine Cercle - Lisa Pasqualini - Denis Allard
+# --------------------------------------------------
+# ----------
+# increasing
+# ----------
+
+increasing = TimeSeries(pattern)
+# ---
+# increasing footprint
+# ---
+def increasing_footprint():
+    # ------------------    
+    # increasing_terrace    
+    # ------------------    
+    
+    increasing_terrace = TimeSeries(pattern)    
+    # ---    
+    # increasing_terrace footprint    
+    # ---    
+    def increasing_terrace_footprint():    
+        # ----        
+        # peak        
+        # ----        
+        
+        peak = TimeSeries(pattern)        
+        # ---        
+        # peak footprint        
+        # ---        
+        def peak_footprint():        
+            # --------------------            
+            # NON-GENERATED MODELS            
+            # --------------------            
+            
+            def signatureAsString(data):
     signature = ""
     for i in xrange(1,len(data)):
         if(i < len(data)):
@@ -115,4 +150,4 @@ class Transition:
     def __init__(self, sign, semantic_output, next_state):
         self.sign = sign
         self.semantic_output = semantic_output
-        self.next_state = next_state
+        self.next_state = next_state            
