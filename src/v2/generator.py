@@ -1,21 +1,5 @@
 import sys, string
 from datetime import datetime
-from input_patterns import raw_patterns
-from core import Transition, State, Pattern
-
-def getPatterns(given_patterns):
-    pats = []
-    for pat, pat_params in given_patterns.iteritems():
-        states = []
-        for name, s in pat_params['states'].iteritems():
-            transitions = []
-            transitions.append(Transition('<', s['<']['semantic'], s['<']['output_state']))
-            transitions.append(Transition('>', s['>']['semantic'], s['>']['output_state']))
-            transitions.append(Transition('=', s['=']['semantic'], s['=']['output_state']))
-            new_state = State(name, s['entry'], transitions)
-            states.append(new_state)
-        pats.append(Pattern(pat, states))
-    return pats
 
 class CodeGeneratorBackend:
 
@@ -52,6 +36,7 @@ class CodeGeneratorBackend:
     def writeFootprint(self, pattern):
         c.writeLine('def ' + pattern.name + '_footprint():')
         c.indent()
+        
 
     def newLine(self, number):
         for i in list(range(0, number)):
@@ -74,19 +59,10 @@ c.writeLine('# This file was auto-generated on ' + datetime.now().strftime('%Y-%
 c.writeLine('# By Florine Cercle - Lisa Pasqualini - Denis Allard')
 c.writeLine('# --------------------------------------------------')
 
-patterns = getPatterns(raw_patterns)
-
-for pat in patterns:
-    c.writeTitle(pat.name)
-    c.writeLine(pat.name + ' = TimeSeries(pattern)')
-    c.writeSubTitle(pat.name + ' footprint')
-    c.writeFootprint(pat)
-
-c.writeTitle('NON-GENERATED MODELS')
-
-with open('models.py', 'r') as content_file:
-    content = content_file.read()
-    c.writeLine(content)
+#
+#with open('models.py', 'r') as content_file:
+#    content = content_file.read()
+#    c.writeLine(content)
 
 my_file = open("generated_functions.py", "w")
 my_file.write(c.end())

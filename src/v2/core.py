@@ -1,44 +1,54 @@
-from models import TimeSeries, Pattern, State, Transition
-from patterns import raw_patterns
+from aggregators import aggregators
+from data import rawData
+from features import features
+from patterns import patterns
 
-def getPatterns(given_patterns):
-    pats = []
-    for pat, pat_params in given_patterns.iteritems():
-        states = []
-        for name, s in pat_params['states'].iteritems():
-            transitions = []
-            transitions.append(Transition('<', s['<']['semantic'], s['<']['output_state']))
-            transitions.append(Transition('>', s['>']['semantic'], s['>']['output_state']))
-            transitions.append(Transition('=', s['=']['semantic'], s['=']['output_state']))
-            new_state = State(name, s['entry'], transitions)
-            states.append(new_state)
-        pats.append(Pattern(pat, states))
-    return pats
+def GetTransition(pattern, currentState, sign):
+    return pattern['states'][currentState][sign]
 
-def getPattern(given_patterns, pattern_name):
-    for pat, pat_params in given_patterns.iteritems():
-        states = []
-        if pat == pattern_name :
-            for name, s in pat_params['states'].iteritems():
-                transitions = []
-                transitions.append(Transition('<', s['<']['semantic'], s['<']['output_state']))
-                transitions.append(Transition('>', s['>']['semantic'], s['>']['output_state']))
-                transitions.append(Transition('=', s['=']['semantic'], s['=']['output_state']))
-                new_state = State(name, s['entry'], transitions)
-                states.append(new_state)
-            return Pattern(pat, states)
+def GetSemantic(pattern, currentState, sign):
+    return pattern['states'][currentState][sign]['semantic']
 
-raw_data = [4,4,2,2,3,5,5,6,3,1,1,2,2,2,2,2,2,1]
+def GetNextState(pattern, currentState, sign):
+    return pattern['states'][currentState][sign]['next_state']
 
-pattern = getPattern(raw_patterns, 'peak')
+def DoSomeWork(data, pattern, feature, aggregator):
 
-time_series = TimeSeries(pattern)
+    pat = patterns[pattern]
 
-time_series.setData(raw_data)
+    signature = []
+    states = []
+    semantic = []
 
-time_series.analyze(raw_data)
+    currentState = pat['entry']
+    states.append(currentState)
 
-print time_series.pattern.name
-print time_series.semantic
-print time_series.states
-print time_series.footprint
+    C = features[feature][aggregators[aggregator]]
+    D = features[feature]['neutral_f']
+    R = C
+
+    print C
+    print D
+    print R
+
+    for i in xrange(1,len(data)):
+        if(i < len(data)):
+            sign = ''
+            if data[i] > data[i-1]: # '<'
+                sign = '<'
+            elif data[i] < data[i-1]: # '>'
+                sign = '>'
+            else: # '='
+                sign = '='
+            transition = GetTransition(pat, currentState, sign)
+            signature.append(sign)
+            currentState = transition['next_state']
+            states.append(currentState)
+            semantic.append(transition['semantic'])
+
+    
+    print signature
+    print states
+    print semantic
+
+DoSomeWork(rawData, 'peak', 'width', 'min')
