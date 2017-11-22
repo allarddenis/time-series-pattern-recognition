@@ -55,26 +55,41 @@ class CodeGeneratorBackend:
         self.writeLine('currentState = \'' + core.getInitState(patternName) + '\'')
         self.writeLine('for i in xrange(1,len(data)):')
         self.indent()
-        self.writeLine('semantic = \'\'')
         self.writeLine('if(i < len(data)):')
-        self.indent()
-        self.writeLine('if data[i] > data[i-1]:')
         self.indent()
         self.writeLine('C_temp = C')
         self.writeLine('D_temp = D')
         self.writeLine('R_temp = R')
-        for state in core.getPatternStates(patternName):
-            self.writeLine('if currentState == \'' + state + '\':')
-            self.indent()
-            semantic = core.getNextSemantic(patternName, state, '<')
-            self.writeLine('semantic = \'' + semantic + '\'')
-            c_update = core.getUpdate('C', semantic, patternName, featureName, aggregatorName)
-            if len(c_update) > 0:
-                self.writeLine(c_update)
-            self.writeLine('currentState = \'' + core.getNextState(patternName, state, '<') + '\'')
-            self.dedent()
+        self.writeLine('if data[i] > data[i-1]:')
+        self.writeCore(patternName, featureName, aggregatorName, '<')
         self.dedent()
-        # 
+        self.writeLine('elif data[i] < data[i-1]:')
+        self.writeCore(patternName, featureName, aggregatorName, '>')
+        self.dedent()
+        self.writeLine('elif data[i] == data[i-1]:')
+        self.writeCore(patternName, featureName, aggregatorName, '=')
+        self.dedent()
+        self.dedent()
+        self.dedent()
+        self.writeLine('return ' + aggregatorName + '(R,C)')
+
+    def writeCore(self, patternName, featureName, aggregatorName, sign):
+        self.indent()
+        c = True
+        for state in core.getPatternStates(patternName):
+            if c :
+                self.writeLine('if currentState == \'' + state + '\':')
+                c = False
+            else:
+                self.writeLine('elif currentState == \'' + state + '\':')
+            self.indent()
+            semantic = core.getNextSemantic(patternName, state, sign)
+            for accumulator in ['C', 'D', 'R']:
+                update = core.getUpdate(accumulator, semantic, patternName, featureName, aggregatorName)
+                if len(update) > 0:
+                    self.writeLine(update)
+            self.writeLine('currentState = \'' + core.getNextState(patternName, state, sign) + '\'')
+            self.dedent()
 
 c = CodeGeneratorBackend()
 
@@ -84,6 +99,8 @@ c.writeLine('# --------------------------------------------------')
 c.writeLine('# This file was auto-generated on ' + datetime.now().strftime('%Y-%m-%d'))
 c.writeLine('# By Florine Cercle - Denis Allard')
 c.writeLine('# --------------------------------------------------')
+c.writeLine('')
+c.writeLine('import operator')
 c.writeLine('')
 
 c.writeFunction('peak', 'width', 'min')

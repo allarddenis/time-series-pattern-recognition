@@ -5,17 +5,36 @@ from patterns import patterns
 from accumulator_updates import updates
 
 def getUpdate(accumulator, semantic, patternName, featureName, aggregatorName):
-    val = accumulator + ' = '
+    val = ''
     if semantic in updates[accumulator]:
-        if 'a01' in updates[accumulator][semantic]:
-            if updates[accumulator][semantic]['a01'] == 'default_g_f':
-                val = val + getGeneratedValue(features[featureName][aggregators[aggregatorName]])
-            elif 'f' in updates[accumulator][semantic]['a01']:
-                if updates[accumulator][semantic]['a01']['f'] == 'phi_f':
-                    val = val + features[featureName]['phi_f']
-        return val
-    else:
-        return ''
+        val = accumulator + ' = '
+        update = updates[accumulator][semantic]['a' + patterns[patternName]['a']]
+        for element in update:
+            if element == 'g':
+                val = val + aggregatorName
+            elif element == 'phi_f':
+                fun = features[featureName]['phi_f']
+                if fun == '+':
+                    val = val + 'operator.add'
+                else:
+                    val = val + fun
+            elif element == 'delta_i_f':
+                val = val + getValue(features[featureName]['delta_i_f'])
+            elif element == 'delta_i_f':
+                val = val + 'data[i+1]'
+            elif element == 'default_g_f':
+                val = val + getInitValue(accumulator, patternName, featureName, aggregatorName)
+            elif element == 'neutral_f':
+                val = val + getValue(features[featureName]['neutral_f'])
+            elif element == 'C':
+                val = val + 'C_temp'
+            elif element == 'D':
+                val = val + 'D_temp'
+            elif element == 'R':
+                val = val + 'R_temp'
+            else:
+                val = val + element
+    return val
 
 def getNextSemantic(patternName, currentState, sign):
     return patterns[patternName]['states'][currentState][sign]['semantic']
@@ -35,53 +54,15 @@ def getInitValue(accumulator, patternName, featureName, aggregatorName):
         val = features[featureName]['neutral_f']
     else :
         val = features[featureName][aggregators[aggregatorName]]
-    return getGeneratedValue(val)
+    return getValue(val)
 
-def getGeneratedValue(val):
+def getValue(val):
     if val == 'inf':
         val = 'float(\'inf\')'
     elif val == '-inf':
         val = 'float(\'-inf\')'
     elif val == 'n':
         val = 'len(data)'
+    elif val == 'x_i':
+        val == 'data[i]'
     return val
-
-
-def GetTransition(pattern, currentState, sign):
-    return pattern['states'][currentState][sign]
-
-def GetSemantic(pattern, currentState, sign):
-    return pattern['states'][currentState][sign]['semantic']
-
-def GetNextState(pattern, currentState, sign):
-    return pattern['states'][currentState][sign]['next_state']
-
-def DoSomeWork(data, pattern, feature, aggregator):
-
-    pat = patterns[pattern]
-
-    signature = []
-    states = []
-    semantic = []
-
-    currentState = pat['entry']
-    states.append(currentState)
-
-    C = features[feature][aggregators[aggregator]]
-    D = features[feature]['neutral_f']
-    R = C
-
-    for i in xrange(1,len(data)):
-        if(i < len(data)):
-            sign = ''
-            if data[i] > data[i-1]: # '<'
-                sign = '<'
-            elif data[i] < data[i-1]: # '>'
-                sign = '>'
-            else: # '='
-                sign = '='
-            transition = GetTransition(pat, currentState, sign)
-            signature.append(sign)
-            currentState = transition['next_state']
-            states.append(currentState)
-            semantic.append(transition['semantic'])
