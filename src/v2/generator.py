@@ -1,7 +1,9 @@
+import sys, string, time
 from datetime import datetime
-import sys, string
 from generation import core 
 from inputs.input_aggregators import aggregators
+from inputs.input_features import features
+from inputs.input_patterns import patterns
 
 class CodeGeneratorBackend:
 
@@ -48,6 +50,7 @@ class CodeGeneratorBackend:
         self.level = self.level - 1
 
     def writeHeader(self, patternName, featureName, aggregatorName):
+        self.writeComment(aggregatorName.upper() + ' ' + featureName.upper() + ' ' + patternName.upper())
         self.writeLine('def ' + aggregatorName + '_' + featureName + '_' + patternName + '(data):')
         self.indent()
 
@@ -107,21 +110,29 @@ class CodeGeneratorBackend:
             self.writeLine('currentState = \'' + core.getNextState(patternName, state, sign) + '\'')
             self.dedent()
 
+start_time = time.time()
+
 c = CodeGeneratorBackend()
 
 c.begin(tab="    ")
 
-c.writeLine('# --------------------------------------------------')
+c.writeLine('# ------------------------------------------')
 c.writeLine('# This file was auto-generated on ' + datetime.now().strftime('%Y-%m-%d'))
 c.writeLine('# By Florine Cercle - Denis Allard')
-c.writeLine('# --------------------------------------------------')
+c.writeLine('# ------------------------------------------')
 c.writeLine('')
 c.writeLine('import operator')
 c.writeLine('')
 
 for agg in aggregators:
-    c.writeFunction('peak', 'width', agg)
+    c.writeComment('----- ' + agg.upper() + ' -----')
+    for feature in features:
+        c.writeComment('----- ' + agg.upper() + ' ' + feature.upper() + ' -----')
+        for pattern in patterns:
+            c.writeFunction(pattern, feature, agg)
 
 my_file = open("./generated/functions.py", "w")
 my_file.write(c.end())
 my_file.close()
+
+print("--- generated in %s seconds ---" % (time.time() - start_time))

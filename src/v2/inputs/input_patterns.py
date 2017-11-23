@@ -1,8 +1,6 @@
 patterns = {
-    'peak' : { 
-        'regex' : '<(=|<)*(>|=)*>', 
-        'a' : '1', 
-        'b' : '1',
+    'peak' : {
+        'a' : '1',
         'entry' : 's',
         'states' : {
             's': { 
@@ -23,9 +21,7 @@ patterns = {
         }
     },
     'increasing' : { 
-        'regex' : '<', 
         'a' : '0', 
-        'b' : '0',
         'entry' : 's',
         'states' : {
             's': { 
@@ -36,9 +32,7 @@ patterns = {
         }
     },
     'increasing_terrace' : { 
-        'regex' : '<=+<', 
         'a' : '1', 
-        'b' : '1',
         'entry' : 's',
         'states' : {
             's': { 
