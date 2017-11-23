@@ -1,14 +1,13 @@
-from aggregators import aggregators
-from data import rawData
-from features import features
-from patterns import patterns
-from accumulator_updates import updates
+from inputs.input_accumulator_updates import accumulator_updates
+from inputs.input_aggregators import aggregators
+from inputs.input_features import features
+from inputs.input_patterns import patterns
 
 def getUpdate(accumulator, semantic, patternName, featureName, aggregatorName):
     val = ''
-    if semantic in updates[accumulator]:
+    if semantic in accumulator_updates[accumulator]:
         val = accumulator + ' = '
-        update = updates[accumulator][semantic]['a' + patterns[patternName]['a']]
+        update = accumulator_updates[accumulator][semantic]['a' + patterns[patternName]['a']]
         for element in update:
             if element == 'g':
                 val = val + aggregatorName

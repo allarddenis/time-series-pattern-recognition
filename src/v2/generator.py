@@ -1,6 +1,6 @@
-import sys, string
 from datetime import datetime
-import core
+import sys, string
+from generation import core 
 
 class CodeGeneratorBackend:
 
@@ -72,6 +72,8 @@ class CodeGeneratorBackend:
         self.dedent()
         self.dedent()
         self.writeLine('return ' + aggregatorName + '(R,C)')
+        self.dedent()
+        self.writeLine('')
 
     def writeCore(self, patternName, featureName, aggregatorName, sign):
         self.indent()
@@ -104,7 +106,8 @@ c.writeLine('import operator')
 c.writeLine('')
 
 c.writeFunction('peak', 'width', 'min')
+c.writeFunction('peak', 'width', 'max')
 
-my_file = open("generated_functions.py", "w")
+my_file = open("./generated/functions.py", "w")
 my_file.write(c.end())
 my_file.close()

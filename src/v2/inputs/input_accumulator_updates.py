@@ -1,4 +1,4 @@
-updates = {
+accumulator_updates = {
     'C' : {
         'out_a' : {
             'a0' : ['default_g_f'],
