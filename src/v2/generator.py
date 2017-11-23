@@ -1,6 +1,7 @@
 from datetime import datetime
 import sys, string
 from generation import core 
+from inputs.input_aggregators import aggregators
 
 class CodeGeneratorBackend:
 
@@ -46,20 +47,33 @@ class CodeGeneratorBackend:
             raise SyntaxError, "internal error in code generator"
         self.level = self.level - 1
 
-    def writeFunction(self, patternName, featureName, aggregatorName):
+    def writeHeader(self, patternName, featureName, aggregatorName):
         self.writeLine('def ' + aggregatorName + '_' + featureName + '_' + patternName + '(data):')
         self.indent()
-        self.writeLine('C = ' + core.getInitValue('C', patternName, featureName, aggregatorName))
-        self.writeLine('D = ' + core.getInitValue('D', patternName, featureName, aggregatorName))
-        self.writeLine('R = ' + core.getInitValue('R', patternName, featureName, aggregatorName))
-        self.writeLine('currentState = \'' + core.getInitState(patternName) + '\'')
+
+    def writeEntryState(self, patternName):
+        res = 'currentState = \''
+        res = res + str(core.getInitState(patternName))
+        res = res + '\'\n'
+        self.write(res)
+
+    def writeInitValue(self, accumulator, patternName, featureName, aggregatorName):
+        res = accumulator + ' = '
+        res = res + str(core.getInitValue(accumulator, patternName, featureName, aggregatorName))
+        res = res + '\n'
+        self.write(res)
+
+    def writeFunction(self, patternName, featureName, aggregatorName):
+        self.writeHeader(patternName, featureName, aggregatorName)
+        for accumulator in ['C', 'D', 'R']:
+            self.writeInitValue(accumulator, patternName, featureName, aggregatorName)
+        self.writeEntryState(patternName)
         self.writeLine('for i in xrange(1,len(data)):')
         self.indent()
         self.writeLine('if(i < len(data)):')
         self.indent()
-        self.writeLine('C_temp = C')
-        self.writeLine('D_temp = D')
-        self.writeLine('R_temp = R')
+        for accumulator in ['C', 'D', 'R']:
+            self.writeLine(accumulator + '_temp = ' + accumulator)
         self.writeLine('if data[i] > data[i-1]:')
         self.writeCore(patternName, featureName, aggregatorName, '<')
         self.dedent()
@@ -105,8 +119,8 @@ c.writeLine('')
 c.writeLine('import operator')
 c.writeLine('')
 
-c.writeFunction('peak', 'width', 'min')
-c.writeFunction('peak', 'width', 'max')
+for agg in aggregators:
+    c.writeFunction('peak', 'width', agg)
 
 my_file = open("./generated/functions.py", "w")
 my_file.write(c.end())

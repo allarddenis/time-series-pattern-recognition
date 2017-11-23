@@ -52,7 +52,10 @@ def getInitValue(accumulator, patternName, featureName, aggregatorName):
     if accumulator == 'D':
         val = features[featureName]['neutral_f']
     else :
-        val = features[featureName][aggregators[aggregatorName]]
+        if aggregators[aggregatorName] in features[featureName]:
+            val = features[featureName][aggregators[aggregatorName]]
+        else:
+            val = aggregators[aggregatorName]
     return getValue(val)
 
 def getValue(val):
