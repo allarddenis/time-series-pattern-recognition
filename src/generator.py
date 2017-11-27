@@ -50,7 +50,6 @@ class CodeGeneratorBackend:
         self.level = self.level - 1
 
     def writeHeader(self, patternName, featureName, aggregatorName):
-        self.writeComment(aggregatorName.upper() + ' ' + featureName.upper() + ' ' + patternName.upper())
         self.writeLine('def ' + aggregatorName + '_' + featureName + '_' + patternName + '(data):')
         self.indent()
 
@@ -116,18 +115,17 @@ c = CodeGeneratorBackend()
 
 c.begin(tab="    ")
 
-c.writeLine('# ------------------------------------------')
-c.writeLine('# This file was auto-generated on ' + datetime.now().strftime('%Y-%m-%d'))
-c.writeLine('# By Florine Cercle - Denis Allard')
-c.writeLine('# ------------------------------------------')
+c.writeComment('----------------------------------------------------------------------------')
+c.writeComment('This file was auto-generated on ' + datetime.now().strftime('%Y-%m-%d'))
+c.writeComment('By Florine Cercle - Denis Allard')
+c.writeComment('Source code : https://github.com/allarddenis/time-series-pattern-recognition')
+c.writeComment('----------------------------------------------------------------------------')
 c.writeLine('')
 c.writeLine('import operator')
 c.writeLine('')
 
 for agg in aggregators:
-    c.writeComment('----- ' + agg.upper() + ' -----')
     for feature in features:
-        c.writeComment('----- ' + agg.upper() + ' ' + feature.upper() + ' -----')
         for pattern in patterns:
             c.writeFunction(pattern, feature, agg)
 
@@ -138,4 +136,8 @@ my_file.close()
 exec_time = time.time() - start_time
 nb_functions = len(aggregators) * len(features) * len(patterns)
 
-print("--- generated " + str(nb_functions) + " functions in %s seconds ---" % exec_time)
+print('-----')
+print('status : success')
+print('functions generated : %s' % str(nb_functions))
+print("exec time : %s seconds" % exec_time)
+print('-----')
