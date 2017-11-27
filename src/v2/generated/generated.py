@@ -5601,7 +5601,7 @@ def sum_min_bump_on_decreasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 't'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -5616,7 +5616,7 @@ def sum_min_bump_on_decreasing_sequence(data):
                 elif currentState == 'v':                
                     D = float('inf')                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN STRICTLY_DECREASING_SEQUENCE
 def sum_min_strictly_decreasing_sequence(data):
@@ -5635,7 +5635,7 @@ def sum_min_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -5652,9 +5652,9 @@ def sum_min_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN INCREASING_TERRACE
 def sum_min_increasing_terrace(data):
@@ -5674,7 +5674,7 @@ def sum_min_increasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -5693,7 +5693,7 @@ def sum_min_increasing_terrace(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN PROPER_PLATEAU
 def sum_min_proper_plateau(data):
@@ -5721,7 +5721,7 @@ def sum_min_proper_plateau(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -5732,7 +5732,7 @@ def sum_min_proper_plateau(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN INCREASING_SEQUENCE
 def sum_min_increasing_sequence(data):
@@ -5760,7 +5760,7 @@ def sum_min_increasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -5768,7 +5768,7 @@ def sum_min_increasing_sequence(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN PLATEAU
 def sum_min_plateau(data):
@@ -5794,11 +5794,11 @@ def sum_min_plateau(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -5809,7 +5809,7 @@ def sum_min_plateau(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN STRICTLY_INCREASING_SEQUENCE
 def sum_min_strictly_increasing_sequence(data):
@@ -5837,7 +5837,7 @@ def sum_min_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -5845,9 +5845,9 @@ def sum_min_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN VALLEY
 def sum_min_valley(data):
@@ -5880,7 +5880,7 @@ def sum_min_valley(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -5891,7 +5891,7 @@ def sum_min_valley(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN PROPER_PLAIN
 def sum_min_proper_plain(data):
@@ -5911,7 +5911,7 @@ def sum_min_proper_plain(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -5930,7 +5930,7 @@ def sum_min_proper_plain(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN ZIGZAG
 def sum_min_zigzag(data):
@@ -5949,7 +5949,7 @@ def sum_min_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 elif currentState == 'b':                
                     C = min(D_temp,data[i-1])                    
@@ -5986,7 +5986,7 @@ def sum_min_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'd'                    
                 elif currentState == 's':                
                     currentState = 'd'                    
@@ -5996,7 +5996,7 @@ def sum_min_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 'b':                
                     D = float('inf')                    
@@ -6009,11 +6009,11 @@ def sum_min_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN INFLEXION
 def sum_min_inflexion(data):
@@ -6034,14 +6034,14 @@ def sum_min_inflexion(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     currentState = 't'                    
                 elif currentState == 'r':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
@@ -6055,7 +6055,7 @@ def sum_min_inflexion(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN DECREASING_SEQUENCE
 def sum_min_decreasing_sequence(data):
@@ -6074,7 +6074,7 @@ def sum_min_decreasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -6091,7 +6091,7 @@ def sum_min_decreasing_sequence(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN PEAK
 def sum_min_peak(data):
@@ -6113,7 +6113,7 @@ def sum_min_peak(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -6135,7 +6135,7 @@ def sum_min_peak(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN DIP_ON_INCREASING_SEQUENCE
 def sum_min_dip_on_increasing_sequence(data):
@@ -6160,7 +6160,7 @@ def sum_min_dip_on_increasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 't'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -6189,7 +6189,7 @@ def sum_min_dip_on_increasing_sequence(data):
                 elif currentState == 'v':                
                     D = float('inf')                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN DECREASING_TERRACE
 def sum_min_decreasing_terrace(data):
@@ -6217,7 +6217,7 @@ def sum_min_decreasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -6228,7 +6228,7 @@ def sum_min_decreasing_terrace(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN GORGE
 def sum_min_gorge(data):
@@ -6267,7 +6267,7 @@ def sum_min_gorge(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -6281,7 +6281,7 @@ def sum_min_gorge(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN INCREASING
 def sum_min_increasing(data):
@@ -6297,7 +6297,7 @@ def sum_min_increasing(data):
             if data[i] > data[i-1]:            
                 if currentState == 's':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(min(D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,min(min(D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -6305,7 +6305,7 @@ def sum_min_increasing(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN PLAIN
 def sum_min_plain(data):
@@ -6323,11 +6323,11 @@ def sum_min_plain(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,min(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -6346,7 +6346,7 @@ def sum_min_plain(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN STEADY
 def sum_min_steady(data):
@@ -6368,9 +6368,9 @@ def sum_min_steady(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(min(D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,min(min(D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN SUMMIT
 def sum_min_summit(data):
@@ -6397,7 +6397,7 @@ def sum_min_summit(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -6425,7 +6425,7 @@ def sum_min_summit(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN DECREASING
 def sum_min_decreasing(data):
@@ -6444,12 +6444,12 @@ def sum_min_decreasing(data):
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     D = float('inf')                    
-                    R = sum(R_temp,min(min(D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,min(min(D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MIN STEADY_SEQUENCE
 def sum_min_steady_sequence(data):
@@ -6468,7 +6468,7 @@ def sum_min_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -6476,7 +6476,7 @@ def sum_min_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -6487,7 +6487,7 @@ def sum_min_steady_sequence(data):
                     C = min(C_temp,min(D_temp,data[i]))                    
                     D = float('inf')                    
                     currentState = 'r'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # ----- SUM MAX -----
 # SUM MAX BUMP_ON_DECREASING_SEQUENCE
@@ -6527,7 +6527,7 @@ def sum_max_bump_on_decreasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 't'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -6542,7 +6542,7 @@ def sum_max_bump_on_decreasing_sequence(data):
                 elif currentState == 'v':                
                     D = float('-inf')                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX STRICTLY_DECREASING_SEQUENCE
 def sum_max_strictly_decreasing_sequence(data):
@@ -6561,7 +6561,7 @@ def sum_max_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -6578,9 +6578,9 @@ def sum_max_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX INCREASING_TERRACE
 def sum_max_increasing_terrace(data):
@@ -6600,7 +6600,7 @@ def sum_max_increasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -6619,7 +6619,7 @@ def sum_max_increasing_terrace(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX PROPER_PLATEAU
 def sum_max_proper_plateau(data):
@@ -6647,7 +6647,7 @@ def sum_max_proper_plateau(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -6658,7 +6658,7 @@ def sum_max_proper_plateau(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX INCREASING_SEQUENCE
 def sum_max_increasing_sequence(data):
@@ -6686,7 +6686,7 @@ def sum_max_increasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -6694,7 +6694,7 @@ def sum_max_increasing_sequence(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX PLATEAU
 def sum_max_plateau(data):
@@ -6720,11 +6720,11 @@ def sum_max_plateau(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -6735,7 +6735,7 @@ def sum_max_plateau(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX STRICTLY_INCREASING_SEQUENCE
 def sum_max_strictly_increasing_sequence(data):
@@ -6763,7 +6763,7 @@ def sum_max_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -6771,9 +6771,9 @@ def sum_max_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX VALLEY
 def sum_max_valley(data):
@@ -6806,7 +6806,7 @@ def sum_max_valley(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -6817,7 +6817,7 @@ def sum_max_valley(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX PROPER_PLAIN
 def sum_max_proper_plain(data):
@@ -6837,7 +6837,7 @@ def sum_max_proper_plain(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -6856,7 +6856,7 @@ def sum_max_proper_plain(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX ZIGZAG
 def sum_max_zigzag(data):
@@ -6875,7 +6875,7 @@ def sum_max_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 elif currentState == 'b':                
                     C = max(D_temp,data[i-1])                    
@@ -6912,7 +6912,7 @@ def sum_max_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'd'                    
                 elif currentState == 's':                
                     currentState = 'd'                    
@@ -6922,7 +6922,7 @@ def sum_max_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 'b':                
                     D = float('-inf')                    
@@ -6935,11 +6935,11 @@ def sum_max_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX INFLEXION
 def sum_max_inflexion(data):
@@ -6960,14 +6960,14 @@ def sum_max_inflexion(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     currentState = 't'                    
                 elif currentState == 'r':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
@@ -6981,7 +6981,7 @@ def sum_max_inflexion(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX DECREASING_SEQUENCE
 def sum_max_decreasing_sequence(data):
@@ -7000,7 +7000,7 @@ def sum_max_decreasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7017,7 +7017,7 @@ def sum_max_decreasing_sequence(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX PEAK
 def sum_max_peak(data):
@@ -7039,7 +7039,7 @@ def sum_max_peak(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7061,7 +7061,7 @@ def sum_max_peak(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX DIP_ON_INCREASING_SEQUENCE
 def sum_max_dip_on_increasing_sequence(data):
@@ -7086,7 +7086,7 @@ def sum_max_dip_on_increasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 't'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7115,7 +7115,7 @@ def sum_max_dip_on_increasing_sequence(data):
                 elif currentState == 'v':                
                     D = float('-inf')                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX DECREASING_TERRACE
 def sum_max_decreasing_terrace(data):
@@ -7143,7 +7143,7 @@ def sum_max_decreasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -7154,7 +7154,7 @@ def sum_max_decreasing_terrace(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX GORGE
 def sum_max_gorge(data):
@@ -7193,7 +7193,7 @@ def sum_max_gorge(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -7207,7 +7207,7 @@ def sum_max_gorge(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX INCREASING
 def sum_max_increasing(data):
@@ -7223,7 +7223,7 @@ def sum_max_increasing(data):
             if data[i] > data[i-1]:            
                 if currentState == 's':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(max(D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,max(max(D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7231,7 +7231,7 @@ def sum_max_increasing(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX PLAIN
 def sum_max_plain(data):
@@ -7249,11 +7249,11 @@ def sum_max_plain(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,max(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7272,7 +7272,7 @@ def sum_max_plain(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX STEADY
 def sum_max_steady(data):
@@ -7294,9 +7294,9 @@ def sum_max_steady(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(max(D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,max(max(D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX SUMMIT
 def sum_max_summit(data):
@@ -7323,7 +7323,7 @@ def sum_max_summit(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7351,7 +7351,7 @@ def sum_max_summit(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX DECREASING
 def sum_max_decreasing(data):
@@ -7370,12 +7370,12 @@ def sum_max_decreasing(data):
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     D = float('-inf')                    
-                    R = sum(R_temp,max(max(D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,max(max(D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM MAX STEADY_SEQUENCE
 def sum_max_steady_sequence(data):
@@ -7394,7 +7394,7 @@ def sum_max_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7402,7 +7402,7 @@ def sum_max_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = float('-inf')                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -7413,7 +7413,7 @@ def sum_max_steady_sequence(data):
                     C = max(C_temp,max(D_temp,data[i]))                    
                     D = float('-inf')                    
                     currentState = 'r'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # ----- SUM SURFACE -----
 # SUM SURFACE BUMP_ON_DECREASING_SEQUENCE
@@ -7453,7 +7453,7 @@ def sum_surface_bump_on_decreasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 't'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -7468,7 +7468,7 @@ def sum_surface_bump_on_decreasing_sequence(data):
                 elif currentState == 'v':                
                     D = 0                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE STRICTLY_DECREASING_SEQUENCE
 def sum_surface_strictly_decreasing_sequence(data):
@@ -7487,7 +7487,7 @@ def sum_surface_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7504,9 +7504,9 @@ def sum_surface_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE INCREASING_TERRACE
 def sum_surface_increasing_terrace(data):
@@ -7526,7 +7526,7 @@ def sum_surface_increasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7545,7 +7545,7 @@ def sum_surface_increasing_terrace(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE PROPER_PLATEAU
 def sum_surface_proper_plateau(data):
@@ -7573,7 +7573,7 @@ def sum_surface_proper_plateau(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -7584,7 +7584,7 @@ def sum_surface_proper_plateau(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE INCREASING_SEQUENCE
 def sum_surface_increasing_sequence(data):
@@ -7612,7 +7612,7 @@ def sum_surface_increasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -7620,7 +7620,7 @@ def sum_surface_increasing_sequence(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE PLATEAU
 def sum_surface_plateau(data):
@@ -7646,11 +7646,11 @@ def sum_surface_plateau(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -7661,7 +7661,7 @@ def sum_surface_plateau(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE STRICTLY_INCREASING_SEQUENCE
 def sum_surface_strictly_increasing_sequence(data):
@@ -7689,7 +7689,7 @@ def sum_surface_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -7697,9 +7697,9 @@ def sum_surface_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE VALLEY
 def sum_surface_valley(data):
@@ -7732,7 +7732,7 @@ def sum_surface_valley(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -7743,7 +7743,7 @@ def sum_surface_valley(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE PROPER_PLAIN
 def sum_surface_proper_plain(data):
@@ -7763,7 +7763,7 @@ def sum_surface_proper_plain(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7782,7 +7782,7 @@ def sum_surface_proper_plain(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE ZIGZAG
 def sum_surface_zigzag(data):
@@ -7801,7 +7801,7 @@ def sum_surface_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 elif currentState == 'b':                
                     C = operator.add(D_temp,data[i-1])                    
@@ -7838,7 +7838,7 @@ def sum_surface_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'd'                    
                 elif currentState == 's':                
                     currentState = 'd'                    
@@ -7848,7 +7848,7 @@ def sum_surface_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 'b':                
                     D = 0                    
@@ -7861,11 +7861,11 @@ def sum_surface_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE INFLEXION
 def sum_surface_inflexion(data):
@@ -7886,14 +7886,14 @@ def sum_surface_inflexion(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     currentState = 't'                    
                 elif currentState == 'r':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
@@ -7907,7 +7907,7 @@ def sum_surface_inflexion(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE DECREASING_SEQUENCE
 def sum_surface_decreasing_sequence(data):
@@ -7926,7 +7926,7 @@ def sum_surface_decreasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7943,7 +7943,7 @@ def sum_surface_decreasing_sequence(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE PEAK
 def sum_surface_peak(data):
@@ -7965,7 +7965,7 @@ def sum_surface_peak(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -7987,7 +7987,7 @@ def sum_surface_peak(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE DIP_ON_INCREASING_SEQUENCE
 def sum_surface_dip_on_increasing_sequence(data):
@@ -8012,7 +8012,7 @@ def sum_surface_dip_on_increasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 't'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -8041,7 +8041,7 @@ def sum_surface_dip_on_increasing_sequence(data):
                 elif currentState == 'v':                
                     D = 0                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE DECREASING_TERRACE
 def sum_surface_decreasing_terrace(data):
@@ -8069,7 +8069,7 @@ def sum_surface_decreasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -8080,7 +8080,7 @@ def sum_surface_decreasing_terrace(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE GORGE
 def sum_surface_gorge(data):
@@ -8119,7 +8119,7 @@ def sum_surface_gorge(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -8133,7 +8133,7 @@ def sum_surface_gorge(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE INCREASING
 def sum_surface_increasing(data):
@@ -8149,7 +8149,7 @@ def sum_surface_increasing(data):
             if data[i] > data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(operator.add(D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,operator.add(operator.add(D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -8157,7 +8157,7 @@ def sum_surface_increasing(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE PLAIN
 def sum_surface_plain(data):
@@ -8175,11 +8175,11 @@ def sum_surface_plain(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,operator.add(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -8198,7 +8198,7 @@ def sum_surface_plain(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE STEADY
 def sum_surface_steady(data):
@@ -8220,9 +8220,9 @@ def sum_surface_steady(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(operator.add(D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,operator.add(operator.add(D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE SUMMIT
 def sum_surface_summit(data):
@@ -8249,7 +8249,7 @@ def sum_surface_summit(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -8277,7 +8277,7 @@ def sum_surface_summit(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE DECREASING
 def sum_surface_decreasing(data):
@@ -8296,12 +8296,12 @@ def sum_surface_decreasing(data):
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(operator.add(D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,operator.add(operator.add(D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM SURFACE STEADY_SEQUENCE
 def sum_surface_steady_sequence(data):
@@ -8320,7 +8320,7 @@ def sum_surface_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -8328,7 +8328,7 @@ def sum_surface_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -8339,7 +8339,7 @@ def sum_surface_steady_sequence(data):
                     C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
                     D = 0                    
                     currentState = 'r'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # ----- SUM ONE -----
 # SUM ONE BUMP_ON_DECREASING_SEQUENCE
@@ -8379,7 +8379,7 @@ def sum_one_bump_on_decreasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 't'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -8394,7 +8394,7 @@ def sum_one_bump_on_decreasing_sequence(data):
                 elif currentState == 'v':                
                     D = 1                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE STRICTLY_DECREASING_SEQUENCE
 def sum_one_strictly_decreasing_sequence(data):
@@ -8413,7 +8413,7 @@ def sum_one_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -8430,9 +8430,9 @@ def sum_one_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE INCREASING_TERRACE
 def sum_one_increasing_terrace(data):
@@ -8452,7 +8452,7 @@ def sum_one_increasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -8471,7 +8471,7 @@ def sum_one_increasing_terrace(data):
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE PROPER_PLATEAU
 def sum_one_proper_plateau(data):
@@ -8499,7 +8499,7 @@ def sum_one_proper_plateau(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -8510,7 +8510,7 @@ def sum_one_proper_plateau(data):
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE INCREASING_SEQUENCE
 def sum_one_increasing_sequence(data):
@@ -8538,7 +8538,7 @@ def sum_one_increasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -8546,7 +8546,7 @@ def sum_one_increasing_sequence(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE PLATEAU
 def sum_one_plateau(data):
@@ -8572,11 +8572,11 @@ def sum_one_plateau(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -8587,7 +8587,7 @@ def sum_one_plateau(data):
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE STRICTLY_INCREASING_SEQUENCE
 def sum_one_strictly_increasing_sequence(data):
@@ -8615,7 +8615,7 @@ def sum_one_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -8623,9 +8623,9 @@ def sum_one_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE VALLEY
 def sum_one_valley(data):
@@ -8658,7 +8658,7 @@ def sum_one_valley(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -8669,7 +8669,7 @@ def sum_one_valley(data):
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE PROPER_PLAIN
 def sum_one_proper_plain(data):
@@ -8689,7 +8689,7 @@ def sum_one_proper_plain(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -8708,7 +8708,7 @@ def sum_one_proper_plain(data):
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE ZIGZAG
 def sum_one_zigzag(data):
@@ -8727,7 +8727,7 @@ def sum_one_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 elif currentState == 'b':                
                     C = max(D_temp,0)                    
@@ -8764,7 +8764,7 @@ def sum_one_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'd'                    
                 elif currentState == 's':                
                     currentState = 'd'                    
@@ -8774,7 +8774,7 @@ def sum_one_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 'b':                
                     D = 1                    
@@ -8787,11 +8787,11 @@ def sum_one_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE INFLEXION
 def sum_one_inflexion(data):
@@ -8812,14 +8812,14 @@ def sum_one_inflexion(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     currentState = 't'                    
                 elif currentState == 'r':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 't'                    
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
@@ -8833,7 +8833,7 @@ def sum_one_inflexion(data):
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE DECREASING_SEQUENCE
 def sum_one_decreasing_sequence(data):
@@ -8852,7 +8852,7 @@ def sum_one_decreasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -8869,7 +8869,7 @@ def sum_one_decreasing_sequence(data):
                 elif currentState == 't':                
                     D = max(D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE PEAK
 def sum_one_peak(data):
@@ -8891,7 +8891,7 @@ def sum_one_peak(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -8913,7 +8913,7 @@ def sum_one_peak(data):
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE DIP_ON_INCREASING_SEQUENCE
 def sum_one_dip_on_increasing_sequence(data):
@@ -8938,7 +8938,7 @@ def sum_one_dip_on_increasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 't'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -8967,7 +8967,7 @@ def sum_one_dip_on_increasing_sequence(data):
                 elif currentState == 'v':                
                     D = 1                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE DECREASING_TERRACE
 def sum_one_decreasing_terrace(data):
@@ -8995,7 +8995,7 @@ def sum_one_decreasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -9006,7 +9006,7 @@ def sum_one_decreasing_terrace(data):
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE GORGE
 def sum_one_gorge(data):
@@ -9045,7 +9045,7 @@ def sum_one_gorge(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -9059,7 +9059,7 @@ def sum_one_gorge(data):
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE INCREASING
 def sum_one_increasing(data):
@@ -9075,7 +9075,7 @@ def sum_one_increasing(data):
             if data[i] > data[i-1]:            
                 if currentState == 's':                
                     D = 1                    
-                    R = sum(R_temp,max(max(D_temp,0),data[i]))                    
+                    R = operator.add(R_temp,max(max(D_temp,0),data[i]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -9083,7 +9083,7 @@ def sum_one_increasing(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE PLAIN
 def sum_one_plain(data):
@@ -9101,11 +9101,11 @@ def sum_one_plain(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 1                    
-                    R = sum(R_temp,max(D_temp,0))                    
+                    R = operator.add(R_temp,max(D_temp,0))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -9124,7 +9124,7 @@ def sum_one_plain(data):
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE STEADY
 def sum_one_steady(data):
@@ -9146,9 +9146,9 @@ def sum_one_steady(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     D = 1                    
-                    R = sum(R_temp,max(max(D_temp,0),data[i]))                    
+                    R = operator.add(R_temp,max(max(D_temp,0),data[i]))                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE SUMMIT
 def sum_one_summit(data):
@@ -9175,7 +9175,7 @@ def sum_one_summit(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -9203,7 +9203,7 @@ def sum_one_summit(data):
                 elif currentState == 't':                
                     D = max(D_temp,0)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE DECREASING
 def sum_one_decreasing(data):
@@ -9222,12 +9222,12 @@ def sum_one_decreasing(data):
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     D = 1                    
-                    R = sum(R_temp,max(max(D_temp,0),data[i]))                    
+                    R = operator.add(R_temp,max(max(D_temp,0),data[i]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM ONE STEADY_SEQUENCE
 def sum_one_steady_sequence(data):
@@ -9246,7 +9246,7 @@ def sum_one_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -9254,7 +9254,7 @@ def sum_one_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 1                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -9265,7 +9265,7 @@ def sum_one_steady_sequence(data):
                     C = max(C_temp,max(D_temp,data[i]))                    
                     D = 1                    
                     currentState = 'r'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # ----- SUM WIDTH -----
 # SUM WIDTH BUMP_ON_DECREASING_SEQUENCE
@@ -9305,7 +9305,7 @@ def sum_width_bump_on_decreasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 't'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -9320,7 +9320,7 @@ def sum_width_bump_on_decreasing_sequence(data):
                 elif currentState == 'v':                
                     D = 0                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH STRICTLY_DECREASING_SEQUENCE
 def sum_width_strictly_decreasing_sequence(data):
@@ -9339,7 +9339,7 @@ def sum_width_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -9356,9 +9356,9 @@ def sum_width_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH INCREASING_TERRACE
 def sum_width_increasing_terrace(data):
@@ -9378,7 +9378,7 @@ def sum_width_increasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -9397,7 +9397,7 @@ def sum_width_increasing_terrace(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH PROPER_PLATEAU
 def sum_width_proper_plateau(data):
@@ -9425,7 +9425,7 @@ def sum_width_proper_plateau(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -9436,7 +9436,7 @@ def sum_width_proper_plateau(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH INCREASING_SEQUENCE
 def sum_width_increasing_sequence(data):
@@ -9464,7 +9464,7 @@ def sum_width_increasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -9472,7 +9472,7 @@ def sum_width_increasing_sequence(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH PLATEAU
 def sum_width_plateau(data):
@@ -9498,11 +9498,11 @@ def sum_width_plateau(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -9513,7 +9513,7 @@ def sum_width_plateau(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH STRICTLY_INCREASING_SEQUENCE
 def sum_width_strictly_increasing_sequence(data):
@@ -9541,7 +9541,7 @@ def sum_width_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -9549,9 +9549,9 @@ def sum_width_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH VALLEY
 def sum_width_valley(data):
@@ -9584,7 +9584,7 @@ def sum_width_valley(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -9595,7 +9595,7 @@ def sum_width_valley(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH PROPER_PLAIN
 def sum_width_proper_plain(data):
@@ -9615,7 +9615,7 @@ def sum_width_proper_plain(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -9634,7 +9634,7 @@ def sum_width_proper_plain(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH ZIGZAG
 def sum_width_zigzag(data):
@@ -9653,7 +9653,7 @@ def sum_width_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 elif currentState == 'b':                
                     C = operator.add(D_temp,1)                    
@@ -9690,7 +9690,7 @@ def sum_width_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'd'                    
                 elif currentState == 's':                
                     currentState = 'd'                    
@@ -9700,7 +9700,7 @@ def sum_width_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 'b':                
                     D = 0                    
@@ -9713,11 +9713,11 @@ def sum_width_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH INFLEXION
 def sum_width_inflexion(data):
@@ -9738,14 +9738,14 @@ def sum_width_inflexion(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     currentState = 't'                    
                 elif currentState == 'r':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 't'                    
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
@@ -9759,7 +9759,7 @@ def sum_width_inflexion(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH DECREASING_SEQUENCE
 def sum_width_decreasing_sequence(data):
@@ -9778,7 +9778,7 @@ def sum_width_decreasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -9795,7 +9795,7 @@ def sum_width_decreasing_sequence(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH PEAK
 def sum_width_peak(data):
@@ -9817,7 +9817,7 @@ def sum_width_peak(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -9839,7 +9839,7 @@ def sum_width_peak(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH DIP_ON_INCREASING_SEQUENCE
 def sum_width_dip_on_increasing_sequence(data):
@@ -9864,7 +9864,7 @@ def sum_width_dip_on_increasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 't'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -9893,7 +9893,7 @@ def sum_width_dip_on_increasing_sequence(data):
                 elif currentState == 'v':                
                     D = 0                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH DECREASING_TERRACE
 def sum_width_decreasing_terrace(data):
@@ -9921,7 +9921,7 @@ def sum_width_decreasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -9932,7 +9932,7 @@ def sum_width_decreasing_terrace(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH GORGE
 def sum_width_gorge(data):
@@ -9971,7 +9971,7 @@ def sum_width_gorge(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -9985,7 +9985,7 @@ def sum_width_gorge(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH INCREASING
 def sum_width_increasing(data):
@@ -10001,7 +10001,7 @@ def sum_width_increasing(data):
             if data[i] > data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = operator.add(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10009,7 +10009,7 @@ def sum_width_increasing(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH PLAIN
 def sum_width_plain(data):
@@ -10027,11 +10027,11 @@ def sum_width_plain(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(D_temp,1))                    
+                    R = operator.add(R_temp,operator.add(D_temp,1))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10050,7 +10050,7 @@ def sum_width_plain(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH STEADY
 def sum_width_steady(data):
@@ -10072,9 +10072,9 @@ def sum_width_steady(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = operator.add(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH SUMMIT
 def sum_width_summit(data):
@@ -10101,7 +10101,7 @@ def sum_width_summit(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10129,7 +10129,7 @@ def sum_width_summit(data):
                 elif currentState == 't':                
                     D = operator.add(D_temp,1)                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH DECREASING
 def sum_width_decreasing(data):
@@ -10148,12 +10148,12 @@ def sum_width_decreasing(data):
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = sum(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = operator.add(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM WIDTH STEADY_SEQUENCE
 def sum_width_steady_sequence(data):
@@ -10172,7 +10172,7 @@ def sum_width_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10180,7 +10180,7 @@ def sum_width_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -10191,7 +10191,7 @@ def sum_width_steady_sequence(data):
                     C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
                     D = 0                    
                     currentState = 'r'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # ----- SUM RANGE -----
 # SUM RANGE BUMP_ON_DECREASING_SEQUENCE
@@ -10231,7 +10231,7 @@ def sum_range_bump_on_decreasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 't'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -10246,7 +10246,7 @@ def sum_range_bump_on_decreasing_sequence(data):
                 elif currentState == 'v':                
                     D = 0                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE STRICTLY_DECREASING_SEQUENCE
 def sum_range_strictly_decreasing_sequence(data):
@@ -10265,7 +10265,7 @@ def sum_range_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10282,9 +10282,9 @@ def sum_range_strictly_decreasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE INCREASING_TERRACE
 def sum_range_increasing_terrace(data):
@@ -10304,7 +10304,7 @@ def sum_range_increasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10323,7 +10323,7 @@ def sum_range_increasing_terrace(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE PROPER_PLATEAU
 def sum_range_proper_plateau(data):
@@ -10351,7 +10351,7 @@ def sum_range_proper_plateau(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -10362,7 +10362,7 @@ def sum_range_proper_plateau(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE INCREASING_SEQUENCE
 def sum_range_increasing_sequence(data):
@@ -10390,7 +10390,7 @@ def sum_range_increasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -10398,7 +10398,7 @@ def sum_range_increasing_sequence(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE PLATEAU
 def sum_range_plateau(data):
@@ -10424,11 +10424,11 @@ def sum_range_plateau(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -10439,7 +10439,7 @@ def sum_range_plateau(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE STRICTLY_INCREASING_SEQUENCE
 def sum_range_strictly_increasing_sequence(data):
@@ -10467,7 +10467,7 @@ def sum_range_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -10475,9 +10475,9 @@ def sum_range_strictly_increasing_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE VALLEY
 def sum_range_valley(data):
@@ -10510,7 +10510,7 @@ def sum_range_valley(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -10521,7 +10521,7 @@ def sum_range_valley(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE PROPER_PLAIN
 def sum_range_proper_plain(data):
@@ -10541,7 +10541,7 @@ def sum_range_proper_plain(data):
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10560,7 +10560,7 @@ def sum_range_proper_plain(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE ZIGZAG
 def sum_range_zigzag(data):
@@ -10579,7 +10579,7 @@ def sum_range_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 elif currentState == 'b':                
                     C = (D_temp,data[i-1])                    
@@ -10616,7 +10616,7 @@ def sum_range_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'd'                    
                 elif currentState == 's':                
                     currentState = 'd'                    
@@ -10626,7 +10626,7 @@ def sum_range_zigzag(data):
                 elif currentState == 'c':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 'b':                
                     D = 0                    
@@ -10639,11 +10639,11 @@ def sum_range_zigzag(data):
                 elif currentState == 'f':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
                 elif currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE INFLEXION
 def sum_range_inflexion(data):
@@ -10664,14 +10664,14 @@ def sum_range_inflexion(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     currentState = 't'                    
                 elif currentState == 'r':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
@@ -10685,7 +10685,7 @@ def sum_range_inflexion(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE DECREASING_SEQUENCE
 def sum_range_decreasing_sequence(data):
@@ -10704,7 +10704,7 @@ def sum_range_decreasing_sequence(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10721,7 +10721,7 @@ def sum_range_decreasing_sequence(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE PEAK
 def sum_range_peak(data):
@@ -10743,7 +10743,7 @@ def sum_range_peak(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10765,7 +10765,7 @@ def sum_range_peak(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE DIP_ON_INCREASING_SEQUENCE
 def sum_range_dip_on_increasing_sequence(data):
@@ -10790,7 +10790,7 @@ def sum_range_dip_on_increasing_sequence(data):
                     currentState = 't'                    
                 elif currentState == 'v':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 't'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10819,7 +10819,7 @@ def sum_range_dip_on_increasing_sequence(data):
                 elif currentState == 'v':                
                     D = 0                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE DECREASING_TERRACE
 def sum_range_decreasing_terrace(data):
@@ -10847,7 +10847,7 @@ def sum_range_decreasing_terrace(data):
                     currentState = 'r'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -10858,7 +10858,7 @@ def sum_range_decreasing_terrace(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE GORGE
 def sum_range_gorge(data):
@@ -10897,7 +10897,7 @@ def sum_range_gorge(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -10911,7 +10911,7 @@ def sum_range_gorge(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE INCREASING
 def sum_range_increasing(data):
@@ -10927,7 +10927,7 @@ def sum_range_increasing(data):
             if data[i] > data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = sum(R_temp,((D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,((D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10935,7 +10935,7 @@ def sum_range_increasing(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE PLAIN
 def sum_range_plain(data):
@@ -10953,11 +10953,11 @@ def sum_range_plain(data):
                     currentState = 's'                    
                 elif currentState == 'r':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 's'                    
                 elif currentState == 't':                
                     D = 0                    
-                    R = sum(R_temp,(D_temp,data[i-1]))                    
+                    R = operator.add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10976,7 +10976,7 @@ def sum_range_plain(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE STEADY
 def sum_range_steady(data):
@@ -10998,9 +10998,9 @@ def sum_range_steady(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = sum(R_temp,((D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,((D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE SUMMIT
 def sum_range_summit(data):
@@ -11027,7 +11027,7 @@ def sum_range_summit(data):
                 elif currentState == 't':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -11055,7 +11055,7 @@ def sum_range_summit(data):
                 elif currentState == 't':                
                     D = (D_temp,data[i-1])                    
                     currentState = 't'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE DECREASING
 def sum_range_decreasing(data):
@@ -11074,12 +11074,12 @@ def sum_range_decreasing(data):
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = sum(R_temp,((D_temp,data[i-1]),data[i]))                    
+                    R = operator.add(R_temp,((D_temp,data[i-1]),data[i]))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # SUM RANGE STEADY_SEQUENCE
 def sum_range_steady_sequence(data):
@@ -11098,7 +11098,7 @@ def sum_range_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -11106,7 +11106,7 @@ def sum_range_steady_sequence(data):
                 elif currentState == 'r':                
                     C = 0                    
                     D = 0                    
-                    R = sum(R_temp,C_temp)                    
+                    R = operator.add(R_temp,C_temp)                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -11117,7 +11117,7 @@ def sum_range_steady_sequence(data):
                     C = (C_temp,(D_temp,data[i]))                    
                     D = 0                    
                     currentState = 'r'                    
-    return sum(R,C)    
+    return operator.add(R,C)    
 
 # ----- MIN -----
 # ----- MIN MIN -----

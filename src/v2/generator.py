@@ -88,7 +88,7 @@ class CodeGeneratorBackend:
         self.dedent()
         self.dedent()
         self.dedent()
-        self.writeLine('return ' + aggregatorName + '(R,C)')
+        self.writeLine('return ' + core.getValue(aggregatorName) + '(R,C)')
         self.dedent()
         self.writeLine('')
 

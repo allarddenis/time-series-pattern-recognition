@@ -10,7 +10,7 @@ def getUpdate(accumulator, semantic, patternName, featureName, aggregatorName):
         update = accumulator_updates[accumulator][semantic]['a' + patterns[patternName]['a']]
         for element in update:
             if element == 'g':
-                val = val + aggregatorName
+                val = val + getValue(aggregatorName)
             elif element == 'phi_f':
                 fun = features[featureName]['phi_f']
                 if fun == '+':
@@ -69,4 +69,6 @@ def getValue(val):
         val = 'data[i-1]'
     elif val == 'delta_i_f_prime':
         val = 'data[i]'
+    elif val == 'sum':
+        val = 'operator.add'
     return val
