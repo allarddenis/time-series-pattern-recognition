@@ -1,4 +1,35 @@
 patterns = {
+    'bump_on_decreasing_sequence' : { 
+        'a' : '1', 
+        'entry' : 's',
+        'states' : {
+            's': { 
+                '>' : { 'semantic' : 'out', 'next_state' : 'r'},
+                '=' : { 'semantic' : 'out', 'next_state' : 's'},
+                '<' : { 'semantic' : 'out', 'next_state' : 's'}
+            },
+            'r': { 
+                '>' : { 'semantic' : 'out', 'next_state' : 't'},
+                '=' : { 'semantic' : 'out', 'next_state' : 's'},
+                '<' : { 'semantic' : 'out', 'next_state' : 's'}
+            },
+            't': { 
+                '>' : { 'semantic' : 'out', 'next_state' : 't'},
+                '=' : { 'semantic' : 'out', 'next_state' : 's'},
+                '<' : { 'semantic' : 'maybe_b', 'next_state' : 'u'}
+            },
+            'u': { 
+                '>' : { 'semantic' : 'maybe_b', 'next_state' : 'v'},
+                '=' : { 'semantic' : 'out_r', 'next_state' : 's'},
+                '<' : { 'semantic' : 'out_r', 'next_state' : 's'}
+            },
+            'v': { 
+                '>' : { 'semantic' : 'found_e', 'next_state' : 't'},
+                '=' : { 'semantic' : 'out_r', 'next_state' : 's'},
+                '<' : { 'semantic' : 'out_r', 'next_state' : 's'}
+            }
+        }
+    },
     'decreasing' : { 
         'a' : '0', 
         'entry' : 's',
