@@ -11,7 +11,7 @@ All function generated are based on a aggregator_feature_pattern model (see [mod
 # Summary
 1. [Models](#models)
 2. [How to](#how-to)
-3. [Contributors](#Contributors)
+3. [Contributors](#contributors)
 
 # Models
 
@@ -98,9 +98,22 @@ This should output test results in command window.
 
 Just pick up the desired function from **/src/generated/generated.py**.
 
-Example : 
+All generated functions are **standalone**. It means you can just copy-paste them and use it. But, don't forget to **import operator** in your file as the function **operator.add()** is used.
+
+Data inputs are expected to be an integer array :
 
 ```python
+data = [0,1,2,3,4,5,6,7,8,9]
+```
+
+Here is an example of a python file using only **min_min_increasing_sequence** function :
+
+```python
+
+import operator
+
+data = [4,3,5,5,2,1,1,3,3,4,6,6,3,1,3,3]
+
 def min_min_increasing_sequence(data):
     C = float('inf')
     D = float('inf')
@@ -134,7 +147,10 @@ def min_min_increasing_sequence(data):
                 elif currentState == 't':                
                     D = min(D_temp,data[i])                    
                     currentState = 't'                    
-    return min(R,C)    
+    return min(R,C) 
+
+print min_min_increasing_sequence(data) 
+# supposed to print '1'  
 ```
 
 # Contributors
