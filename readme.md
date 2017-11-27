@@ -103,5 +103,4 @@ print generated_functions.max_height_peak(raw_data)
 # Contributors
 
 - Florine Cercle
-- Lisa Pasqualini
 - Denis Allard
