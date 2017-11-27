@@ -12,7 +12,7 @@ for test in tests:
     if(res == tests[test]['result']):
         nb_success = nb_success + 1
     else:
-        failures.append(test)
+        failures.append(test + ' : ' + str(res) + ' instead of ' + str(tests[test]['result']))
     nb_tests = nb_tests + 1
 
 print('success : ' + str(nb_success) + '/' + str(nb_tests))
