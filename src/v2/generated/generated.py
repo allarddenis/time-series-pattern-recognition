@@ -3786,11 +3786,11 @@ def max_width_strictly_decreasing_sequence(data):
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 'r'                    
                 elif currentState == 'r':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
@@ -3894,11 +3894,11 @@ def max_width_increasing_sequence(data):
             R_temp = R            
             if data[i] > data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 't'                    
                 elif currentState == 't':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 't'                    
             elif data[i] < data[i-1]:            
@@ -3913,7 +3913,7 @@ def max_width_increasing_sequence(data):
                 if currentState == 's':                
                     currentState = 's'                    
                 elif currentState == 't':                
-                    D = operator.add(D_temp,data[i])                    
+                    D = operator.add(D_temp,1)                    
                     currentState = 't'                    
     return max(R,C)    
 
@@ -3971,11 +3971,11 @@ def max_width_strictly_increasing_sequence(data):
             R_temp = R            
             if data[i] > data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 'r'                    
                 elif currentState == 'r':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
@@ -4225,18 +4225,18 @@ def max_width_decreasing_sequence(data):
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 't'                    
                 elif currentState == 't':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 't'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
                 elif currentState == 't':                
-                    D = operator.add(D_temp,data[i])                    
+                    D = operator.add(D_temp,1)                    
                     currentState = 't'                    
     return max(R,C)    
 
@@ -4444,7 +4444,7 @@ def max_width_increasing(data):
             if data[i] > data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = max(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = max(R_temp,operator.add(operator.add(D_temp,1),1))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -4515,7 +4515,7 @@ def max_width_steady(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = max(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = max(R_temp,operator.add(operator.add(D_temp,1),1))                    
                     currentState = 's'                    
     return max(R,C)    
 
@@ -4591,7 +4591,7 @@ def max_width_decreasing(data):
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = max(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = max(R_temp,operator.add(operator.add(D_temp,1),1))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -4627,11 +4627,11 @@ def max_width_steady_sequence(data):
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 'r'                    
                 elif currentState == 'r':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 'r'                    
     return max(R,C)    
@@ -9343,11 +9343,11 @@ def sum_width_strictly_decreasing_sequence(data):
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 'r'                    
                 elif currentState == 'r':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
@@ -9451,11 +9451,11 @@ def sum_width_increasing_sequence(data):
             R_temp = R            
             if data[i] > data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 't'                    
                 elif currentState == 't':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 't'                    
             elif data[i] < data[i-1]:            
@@ -9470,7 +9470,7 @@ def sum_width_increasing_sequence(data):
                 if currentState == 's':                
                     currentState = 's'                    
                 elif currentState == 't':                
-                    D = operator.add(D_temp,data[i])                    
+                    D = operator.add(D_temp,1)                    
                     currentState = 't'                    
     return operator.add(R,C)    
 
@@ -9528,11 +9528,11 @@ def sum_width_strictly_increasing_sequence(data):
             R_temp = R            
             if data[i] > data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 'r'                    
                 elif currentState == 'r':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
@@ -9782,18 +9782,18 @@ def sum_width_decreasing_sequence(data):
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 't'                    
                 elif currentState == 't':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 't'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
                 elif currentState == 't':                
-                    D = operator.add(D_temp,data[i])                    
+                    D = operator.add(D_temp,1)                    
                     currentState = 't'                    
     return operator.add(R,C)    
 
@@ -10001,7 +10001,7 @@ def sum_width_increasing(data):
             if data[i] > data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = operator.add(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = operator.add(R_temp,operator.add(operator.add(D_temp,1),1))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -10072,7 +10072,7 @@ def sum_width_steady(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = operator.add(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = operator.add(R_temp,operator.add(operator.add(D_temp,1),1))                    
                     currentState = 's'                    
     return operator.add(R,C)    
 
@@ -10148,7 +10148,7 @@ def sum_width_decreasing(data):
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = operator.add(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = operator.add(R_temp,operator.add(operator.add(D_temp,1),1))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -10184,11 +10184,11 @@ def sum_width_steady_sequence(data):
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 'r'                    
                 elif currentState == 'r':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 'r'                    
     return operator.add(R,C)    
@@ -14900,11 +14900,11 @@ def min_width_strictly_decreasing_sequence(data):
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 'r'                    
                 elif currentState == 'r':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 'r'                    
             elif data[i] == data[i-1]:            
@@ -15008,11 +15008,11 @@ def min_width_increasing_sequence(data):
             R_temp = R            
             if data[i] > data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 't'                    
                 elif currentState == 't':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 't'                    
             elif data[i] < data[i-1]:            
@@ -15027,7 +15027,7 @@ def min_width_increasing_sequence(data):
                 if currentState == 's':                
                     currentState = 's'                    
                 elif currentState == 't':                
-                    D = operator.add(D_temp,data[i])                    
+                    D = operator.add(D_temp,1)                    
                     currentState = 't'                    
     return min(R,C)    
 
@@ -15085,11 +15085,11 @@ def min_width_strictly_increasing_sequence(data):
             R_temp = R            
             if data[i] > data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 'r'                    
                 elif currentState == 'r':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 'r'                    
             elif data[i] < data[i-1]:            
@@ -15339,18 +15339,18 @@ def min_width_decreasing_sequence(data):
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 't'                    
                 elif currentState == 't':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 't'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     currentState = 's'                    
                 elif currentState == 't':                
-                    D = operator.add(D_temp,data[i])                    
+                    D = operator.add(D_temp,1)                    
                     currentState = 't'                    
     return min(R,C)    
 
@@ -15558,7 +15558,7 @@ def min_width_increasing(data):
             if data[i] > data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = min(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = min(R_temp,operator.add(operator.add(D_temp,1),1))                    
                     currentState = 's'                    
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
@@ -15629,7 +15629,7 @@ def min_width_steady(data):
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = min(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = min(R_temp,operator.add(operator.add(D_temp,1),1))                    
                     currentState = 's'                    
     return min(R,C)    
 
@@ -15705,7 +15705,7 @@ def min_width_decreasing(data):
             elif data[i] < data[i-1]:            
                 if currentState == 's':                
                     D = 0                    
-                    R = min(R_temp,operator.add(operator.add(D_temp,1),data[i]))                    
+                    R = min(R_temp,operator.add(operator.add(D_temp,1),1))                    
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
@@ -15741,11 +15741,11 @@ def min_width_steady_sequence(data):
                     currentState = 's'                    
             elif data[i] == data[i-1]:            
                 if currentState == 's':                
-                    C = operator.add(operator.add(D_temp,1),data[i])                    
+                    C = operator.add(operator.add(D_temp,1),1)                    
                     D = 0                    
                     currentState = 'r'                    
                 elif currentState == 'r':                
-                    C = operator.add(C_temp,operator.add(D_temp,data[i]))                    
+                    C = operator.add(C_temp,operator.add(D_temp,1))                    
                     D = 0                    
                     currentState = 'r'                    
     return min(R,C)    
