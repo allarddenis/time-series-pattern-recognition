@@ -2,29 +2,44 @@
 
 Generated python code analysing time series and extracting patterns from it.
 
+The generated functions are based on a model created by some researchers (see [reseachers](https://arxiv.org/abs/1609.08925)). 
+
+The model uses accumulators to extract aggregations on features of a pattern occurrences in a time series.
+
+All function generated are based on a aggregator_feature_pattern model (see [models](#models)).
+
+# Summary
+1. [Models](#models)
+2. [How to](#how-to)
+3. [Contributors](#Contributors)
+
+# Models
+
 ## Patterns
 
 Pattern name | Regex
 ------------ | -------------
-increasing | <
+bump_on_decreasing_sequence | >><>>
 decreasing | >
-increasing_sequence | <(<\|=)*<\|<
-decreasing_sequence | >(>\|=)*>\|>
-increasing_terrace | <=+<
+increasing | <
+decreasing_sequence | >(>|=)*>|>
 decreasing_terrace | >=+>
-summit | (<\|(<(=\|<)*<))(>\|(>(=\|>)*>))
+dip_on_increasing_sequence | <<><<
 gorge | (>\|(>(=\|>)*>))(<\|(<(=\|<)*<))
-plateau | <=*>
-plain | >=*<
-proper_plateau | <=+>
-proper_plain | >=+<
-strictly_increasing_sequence | <+
-strictly_decreasing_sequence | >+
-peak | <(=\|<)*(>\|=)*>
-valley | >(=\|>)*(<\|=)*<
+increasing_sequence | <(<\|=)*<\|<
+increasing_terrace | <=+<
 inflexion | <(<\|=)*>\|>(>\|=)*<
+peak | <(=\|<)*(>\|=)*>
+plain | >=*<
+plateau | <=*>
+proper_plain | >=+<
+proper_plateau | <=+>
 steady | =
 steady_sequence | =+
+strictly_increasing_sequence | <+
+strictly_decreasing_sequence | >+
+summit | (<\|(<(=\|<)*<))(>\|(>(=\|>)*>))
+valley | >(=\|>)*(<\|=)*<
 zigzag | (<>)+(<\|<>)\|(><)+(>\|><)
 
 Example :
@@ -57,51 +72,72 @@ max | Largest value among features of pattern occurrences
 min | Lowest value among features of pattern occurrences
 sum | Sum of feature values of pattern occurrences
 
+# How to
+
 ## How to generate functions
 
 From **/src** execute the following command :
 
 ```
-python code_generation.py    
+python generator.py    
 ```
 
-This should generate **generated_functions.py** file.
+This should generate **generated.py** file in **/src/generated**.
 
-## How to use generated functions
+## How to test
 
-1. Once **generated_functions.py** file has been generated, import it in your python file :
+From **/src** execute the following command :
 
-```python
-import generated_functions
+```
+python test.py    
 ```
 
-2. Create or get your time series :
+This should output test results in command window.
+
+## How to use
+
+Just pick up the desired function from **/src/generated/generated.py**.
+
+Example : 
 
 ```python
-import generated_functions
-
-time_series_data = [4,4,2,2,3,5,5,6,3,1,1,2,2,2,2,2,2,1]
-```
-
-3. Use any generated function :
-
-```python
-import generated_functions
-
-time_series_data = [4,4,2,2,3,5,5,6,3,1,1,2,2,2,2,2,2,1]
-
-print 'peak one : '
-print generated_functions.one_peak(raw_data)
-
-print 'peak heights : '
-print generated_functions.height_peak(raw_data)
-
-print 'max peak height : '
-print generated_functions.max_height_peak(raw_data)
+def min_min_increasing_sequence(data):
+    C = float('inf')
+    D = float('inf')
+    R = float('inf')
+    currentState = 's'
+    for i in xrange(1,len(data)):    
+        if(i < len(data)):        
+            C_temp = C            
+            D_temp = D            
+            R_temp = R            
+            if data[i] > data[i-1]:            
+                if currentState == 's':                
+                    C = min(min(D_temp,data[i-1]),data[i])                    
+                    D = float('inf')                    
+                    currentState = 't'                    
+                elif currentState == 't':                
+                    C = min(C_temp,min(D_temp,data[i]))                    
+                    D = float('inf')                    
+                    currentState = 't'                    
+            elif data[i] < data[i-1]:            
+                if currentState == 's':                
+                    currentState = 's'                    
+                elif currentState == 't':                
+                    C = float('inf')                    
+                    D = float('inf')                    
+                    R = min(R_temp,C_temp)                    
+                    currentState = 's'                    
+            elif data[i] == data[i-1]:            
+                if currentState == 's':                
+                    currentState = 's'                    
+                elif currentState == 't':                
+                    D = min(D_temp,data[i])                    
+                    currentState = 't'                    
+    return min(R,C)    
 ```
 
 # Contributors
 
 - Florine Cercle
-- Lisa Pasqualini
 - Denis Allard
