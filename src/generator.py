@@ -124,10 +124,13 @@ c.writeLine('')
 c.writeLine('import operator')
 c.writeLine('')
 
+nb_func = 0
+
 for agg in aggregators:
     for feature in features:
         for pattern in patterns:
             c.writeFunction(pattern, feature, agg)
+            nb_func = nb_func + 1
 
 my_file = open("./generated/generated.py", "w")
 my_file.write(c.end())
@@ -138,6 +141,6 @@ nb_functions = len(aggregators) * len(features) * len(patterns)
 
 print('-----')
 print('status : success')
-print('functions generated : %s' % str(nb_functions))
+print('functions generated : %d/%d' % (nb_func, nb_functions))
 print("exec time : %s seconds" % exec_time)
 print('-----')

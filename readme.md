@@ -94,6 +94,8 @@ python test.py
 
 This should output test results in command window.
 
+**Tested functions** : 123 out of 396 generated
+
 ## How to use
 
 Just pick up the desired function from **/src/generated/generated.py**.

@@ -17,7 +17,9 @@ for test in tests:
 
 percent_success = nb_success * 100 / nb_tests
 
-print('success : ' + str(nb_success) + '/' + str(nb_tests) + ' (' + str(percent_success) + '%)')
+print('-----')
+print('passing tests : %d/%d (%d%s)' % (nb_success, nb_tests, percent_success, '%'))
+print('-----')
 
 if len(failures) > 0:
     for fail in failures:
