@@ -20,7 +20,7 @@ def getUpdate(accumulator, semantic, patternName, featureName, aggregatorName):
             elif element == 'delta_i_f':
                 val = val + getValue(features[featureName]['delta_i_f'])
             elif element == 'delta_i_f_prime':
-                val = val + 'data[i+1]'
+                val = val + 'data[i]'
             elif element == 'default_g_f':
                 val = val + getInitValue(accumulator, patternName, featureName, aggregatorName)
             elif element == 'neutral_f':
@@ -66,7 +66,7 @@ def getValue(val):
     elif val == 'n':
         val = 'len(data)'
     elif val == 'xi' :
-        val = 'data[i]'
+        val = 'data[i-1]'
     elif val == 'delta_i_f_prime':
-        val = 'data[i+1]'
+        val = 'data[i]'
     return val

@@ -131,8 +131,11 @@ for agg in aggregators:
         for pattern in patterns:
             c.writeFunction(pattern, feature, agg)
 
-my_file = open("./generated/functions.py", "w")
+my_file = open("./generated/generated.py", "w")
 my_file.write(c.end())
 my_file.close()
 
-print("--- generated in %s seconds ---" % (time.time() - start_time))
+exec_time = time.time() - start_time
+nb_functions = len(aggregators) * len(features) * len(patterns)
+
+print("--- generated " + str(nb_functions) + " functions in %s seconds ---" % exec_time)
