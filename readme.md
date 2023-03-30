@@ -121,7 +121,7 @@ def min_min_increasing_sequence(data):
     D = float('inf')
     R = float('inf')
     currentState = 's'
-    for i in xrange(1,len(data)):    
+    for i in range(1,len(data)):    
         if(i < len(data)):        
             C_temp = C            
             D_temp = D            

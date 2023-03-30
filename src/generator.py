@@ -1,6 +1,6 @@
-import sys, string, time
+import time
 from datetime import datetime
-from generation import core 
+from generation import core
 from inputs.input_aggregators import aggregators
 from inputs.input_features import features
 from inputs.input_patterns import patterns
@@ -14,7 +14,7 @@ class CodeGeneratorBackend:
         self.level = 0
 
     def end(self):
-        return string.join(self.code, "")
+        return "".join(self.code)
 
     def write(self, string):
         self.code.append(self.tab * self.level + string)
@@ -46,11 +46,12 @@ class CodeGeneratorBackend:
 
     def dedent(self):
         if self.level == 0:
-            raise SyntaxError, "internal error in code generator"
+            raise SyntaxError("internal error in code generator")
         self.level = self.level - 1
 
     def writeHeader(self, patternName, featureName, aggregatorName):
-        self.writeLine('def ' + aggregatorName + '_' + featureName + '_' + patternName + '(data):')
+        self.writeLine('def ' + aggregatorName + '_' +
+                       featureName + '_' + patternName + '(data):')
         self.indent()
 
     def writeEntryState(self, patternName):
@@ -61,16 +62,18 @@ class CodeGeneratorBackend:
 
     def writeInitValue(self, accumulator, patternName, featureName, aggregatorName):
         res = accumulator + ' = '
-        res = res + str(core.getInitValue(accumulator, patternName, featureName, aggregatorName))
+        res = res + str(core.getInitValue(accumulator,
+                        patternName, featureName, aggregatorName))
         res = res + '\n'
         self.write(res)
 
     def writeFunction(self, patternName, featureName, aggregatorName):
         self.writeHeader(patternName, featureName, aggregatorName)
         for accumulator in ['C', 'D', 'R']:
-            self.writeInitValue(accumulator, patternName, featureName, aggregatorName)
+            self.writeInitValue(accumulator, patternName,
+                                featureName, aggregatorName)
         self.writeEntryState(patternName)
-        self.writeLine('for i in xrange(1,len(data)):')
+        self.writeLine('for i in range(1,len(data)):')
         self.indent()
         self.writeLine('if(i < len(data)):')
         self.indent()
@@ -95,7 +98,7 @@ class CodeGeneratorBackend:
         self.indent()
         c = True
         for state in core.getPatternStates(patternName):
-            if c :
+            if c:
                 self.writeLine('if currentState == \'' + state + '\':')
                 c = False
             else:
@@ -103,11 +106,14 @@ class CodeGeneratorBackend:
             self.indent()
             semantic = core.getNextSemantic(patternName, state, sign)
             for accumulator in ['C', 'D', 'R']:
-                update = core.getUpdate(accumulator, semantic, patternName, featureName, aggregatorName)
+                update = core.getUpdate(
+                    accumulator, semantic, patternName, featureName, aggregatorName)
                 if len(update) > 0:
                     self.writeLine(update)
-            self.writeLine('currentState = \'' + core.getNextState(patternName, state, sign) + '\'')
+            self.writeLine('currentState = \'' +
+                           core.getNextState(patternName, state, sign) + '\'')
             self.dedent()
+
 
 start_time = time.time()
 
@@ -115,11 +121,15 @@ c = CodeGeneratorBackend()
 
 c.begin(tab="    ")
 
-c.writeComment('----------------------------------------------------------------------------')
-c.writeComment('This file was auto-generated on ' + datetime.now().strftime('%Y-%m-%d'))
+c.writeComment(
+    '----------------------------------------------------------------------------')
+c.writeComment('This file was auto-generated on ' +
+               datetime.now().strftime('%Y-%m-%d'))
 c.writeComment('By Florine Cercle - Denis Allard')
-c.writeComment('Source code : https://github.com/allarddenis/time-series-pattern-recognition')
-c.writeComment('----------------------------------------------------------------------------')
+c.writeComment(
+    'Source code : https://github.com/allarddenis/time-series-pattern-recognition')
+c.writeComment(
+    '----------------------------------------------------------------------------')
 c.writeLine('')
 c.writeLine('import operator')
 c.writeLine('')
